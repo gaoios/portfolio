@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Infra 基础设施参观 · 脱敏案例复盘</title>
+    <style>
+        :root {
+            --red: #E61D2B;
+            --red-dark: #7a0000;
+            --red-light: rgba(230, 29, 43, 0.08);
+            --text: #18181B;
+            --muted: #71717A;
+            --border: #E4E4E7;
+            --bg: #F4F4F5;
+            --white: #FFFFFF;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, "SF Pro Display", "Helvetica Neue", Arial,
+                         "PingFang SC", "Hiragino Sans GB", sans-serif;
+            background: #111;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pres {
+            width: 1920px;
+            height: 1080px;
+            position: relative;
+            transform-origin: center center;
+        }
+
+        /* ── 幻灯片 ── */
+        .slide {
+            position: absolute; inset: 0; background: var(--white);
+            overflow: hidden; opacity: 0; pointer-events: none;
+            transition: transform 0.5s cubic-bezier(0.4,0,0.2,1),
+                        opacity  0.5s cubic-bezier(0.4,0,0.2,1);
+        }
+        .slide.pos-right { transform: translateX(100%); }
+        .slide.pos-left  { transform: translateX(-100%); }
+        .slide.active    { opacity: 1; pointer-events: all; transform: translateX(0); }
+
+        /* ── 共用组件 ── */
+        .slide-header {
+            display: flex; align-items: center;
+            padding: 44px 88px 34px; border-bottom: 2px solid var(--border); gap: 22px;
+        }
+        .header-icon {
+            width: 54px; height: 54px; background: var(--red); border-radius: 14px;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .slide-header h2 { font-size: 36px; font-weight: 800; color: var(--text); letter-spacing: -0.5px; }
+        .header-sub   { margin-left: auto; font-size: 16px; color: var(--muted); font-weight: 500; }
+        .header-tag   { font-size: 13px; font-weight: 700; background: var(--red-light); color: var(--red); border: 1px solid rgba(230,29,43,0.2); padding: 5px 14px; border-radius: 20px; }
+        .header-page  { font-size: 13px; color: var(--muted); font-weight: 600; background: var(--bg); padding: 5px 14px; border-radius: 20px; white-space: nowrap; }
+
+        .footer-stripe {
+            position: absolute; bottom: 0; left: 0; right: 0; height: 6px;
+            background: linear-gradient(90deg, var(--red) 0%, #ff6b6b 50%, var(--red) 100%);
+        }
+        .slide-badge {
+            position: absolute; top: 46px; right: 88px;
+            font-size: 13px; color: var(--muted); font-weight: 600;
+            background: var(--bg); padding: 6px 16px; border-radius: 20px;
+        }
+        .hl { color: var(--red); font-weight: 700; }
+
+        /* ════════════════════════════════════
+           SLIDE 1 · 封面
+        ════════════════════════════════════ */
+        .cv-layout {
+            height: 100%; padding: 64px 88px;
+            display: flex; flex-direction: column; gap: 44px;
+            background: #fafafa;
+        }
+        .cv-top { display: flex; align-items: center; gap: 24px; }
+        .cv-logo {
+            width: 72px; height: 72px; background: var(--red); border-radius: 18px;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .cv-title-block { flex: 1; }
+        .cv-main-title  { font-size: 52px; font-weight: 900; color: var(--text); letter-spacing: -1px; line-height: 1; }
+        .cv-sub-title   { font-size: 22px; color: var(--muted); margin-top: 10px; font-weight: 500; }
+        .cv-year        { font-size: 16px; font-weight: 700; background: var(--red-light); color: var(--red); border: 1.5px solid rgba(230,29,43,0.22); padding: 8px 22px; border-radius: 30px; }
+
+        .cv-events { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; flex: 1; }
+        .cv-card {
+            background: white; border: 2px solid var(--border); border-radius: 28px;
+            padding: 52px 56px; display: flex; flex-direction: column; gap: 28px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.06); position: relative; overflow: hidden;
+        }
+        .cv-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--red); }
+
+        .cv-card-header { display: flex; align-items: baseline; gap: 16px; }
+        .cv-card-city   { font-size: 48px; font-weight: 900; color: var(--text); letter-spacing: -1px; }
+        .cv-card-event  { font-size: 17px; color: var(--red); font-weight: 700; background: var(--red-light); padding: 4px 14px; border-radius: 20px; }
+        .cv-card-loc    { font-size: 17px; color: var(--muted); font-weight: 500; }
+
+        .cv-stats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--bg); border-bottom: 2px solid var(--bg); padding: 28px 0; }
+        .cv-mini  { display: flex; flex-direction: column; gap: 8px; padding: 0 24px; border-right: 1.5px solid var(--border); }
+        .cv-mini:first-child { padding-left: 0; }
+        .cv-mini:last-child  { border-right: none; }
+        .cv-mini-val { font-size: 60px; font-weight: 900; color: var(--red); line-height: 1; }
+        .cv-mini-lbl { font-size: 16px; color: var(--muted); font-weight: 500; }
+        .cv-extra    { font-size: 15px; color: var(--muted); background: var(--bg); padding: 13px 18px; border-radius: 10px; }
+
+        /* ════════════════════════════════════
+           SLIDE 2 · 城市A概览  &  SLIDE 5 · 城市B概览
+           共用 s1-* layout
+        ════════════════════════════════════ */
+        .s1-layout { display: grid; grid-template-columns: 560px 1fr; height: 100%; }
+        .s1-red {
+            background: linear-gradient(160deg, var(--red) 0%, var(--red-dark) 100%);
+            padding: 76px 64px; display: flex; flex-direction: column;
+            justify-content: space-between; color: white; position: relative; overflow: hidden;
+        }
+        .s1-red::before { content: ""; position: absolute; top: -130px; right: -130px; width: 500px; height: 500px; background: rgba(255,255,255,0.04); border-radius: 50%; }
+        .s1-red::after  { content: ""; position: absolute; bottom: -110px; left: -110px; width: 380px; height: 380px; background: rgba(255,255,255,0.04); border-radius: 50%; }
+
+        .s1-brand      { display: flex; align-items: center; gap: 16px; position: relative; z-index: 1; }
+        .s1-brand-icon { width: 52px; height: 52px; background: rgba(255,255,255,0.18); border-radius: 14px; display: flex; align-items: center; justify-content: center; }
+        .s1-brand-name { font-size: 20px; font-weight: 700; opacity: 0.9; }
+
+        .s1-hero  { position: relative; z-index: 1; }
+        .s1-tag   { display: inline-block; font-size: 14px; background: rgba(255,255,255,0.18); padding: 6px 18px; border-radius: 24px; margin-bottom: 28px; letter-spacing: 0.5px; }
+        .s1-title { font-size: 50px; font-weight: 900; line-height: 1.15; letter-spacing: -1px; margin-bottom: 28px; }
+        .s1-desc  { font-size: 19px; line-height: 1.9; opacity: 0.82; }
+
+        .s1-meta     { display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 1; }
+        .s1-meta-row { display: flex; align-items: center; gap: 10px; font-size: 15px; opacity: 0.7; }
+
+        .s1-right         { background: #fafafa; padding: 72px 88px; display: flex; flex-direction: column; gap: 36px; }
+        .s1-section-label { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 2.5px; text-transform: uppercase; }
+        .s1-stats         { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .s1-stat          { background: white; border: 2px solid var(--border); border-radius: 20px; padding: 32px 28px; transition: all 0.3s; }
+        .s1-stat:hover    { border-color: var(--red); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(230,29,43,0.1); }
+        .s1-stat-val      { display: block; font-size: 68px; font-weight: 900; color: var(--red); line-height: 1; }
+        .s1-stat-lbl      { display: block; font-size: 17px; color: var(--muted); margin-top: 10px; font-weight: 500; }
+        .s1-callout       { background: white; border-left: 5px solid var(--red); border-radius: 16px; padding: 24px 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .s1-callout-title { font-size: 18px; font-weight: 700; color: var(--red); margin-bottom: 12px; }
+        .s1-callout-text  { font-size: 16px; color: var(--text); line-height: 2; }
+
+        /* ════════════════════════════════════
+           SLIDE 3 · 城市A客户反馈
+        ════════════════════════════════════ */
+        #slide-3 { display: flex; flex-direction: column; }
+        .fb-body  { flex: 1; min-height: 0; padding: 28px 88px 48px; display: flex; flex-direction: column; gap: 20px; }
+        .fb-grid  { display: grid; grid-template-columns: repeat(5,1fr); gap: 20px; flex: 1; min-height: 0; }
+        .fb-card  { background: white; border: 2px solid var(--border); border-radius: 20px; padding: 28px 22px; display: flex; flex-direction: column; }
+        .fb-bar   { display: flex; align-items: center; gap: 10px; padding-bottom: 14px; margin-bottom: 16px; border-bottom: 2px solid var(--red-light); }
+        .fb-bar::before { content: ""; width: 5px; height: 22px; background: var(--red); border-radius: 3px; flex-shrink: 0; }
+        .fb-name  { font-size: 20px; font-weight: 800; color: var(--text); }
+        .fb-pts   { display: flex; flex-direction: column; gap: 12px; flex: 1; }
+        .fb-pt    { display: flex; gap: 9px; align-items: flex-start; font-size: 14px; color: #333; line-height: 1.6; }
+        .fb-dot   { width: 5px; height: 5px; background: var(--red); border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+        .fb-tag   { margin-top: 18px; font-size: 12px; font-weight: 700; color: var(--red); background: var(--red-light); padding: 8px 12px; border-radius: 8px; text-align: center; }
+
+        /* ════════════════════════════════════
+           SLIDE 4 · 城市A展示亮点
+        ════════════════════════════════════ */
+        #slide-4 { display: flex; flex-direction: column; }
+        .ex-body  { flex: 1; min-height: 0; padding: 36px 88px 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+        .ex-panel { background: white; border: 2px solid var(--border); border-radius: 24px; padding: 44px; display: flex; flex-direction: column; gap: 24px; }
+        .ex-title { font-size: 22px; font-weight: 800; color: var(--text); display: flex; align-items: center; gap: 14px; }
+        .ex-title::before { content: ""; width: 6px; height: 28px; background: var(--red); border-radius: 3px; }
+
+        .ex-metrics { display: flex; gap: 20px; }
+        .ex-metric  { flex: 1; background: var(--bg); border-radius: 14px; padding: 18px 20px; text-align: center; }
+        .ex-metric-val { font-size: 40px; font-weight: 900; color: var(--red); line-height: 1; }
+        .ex-metric-lbl { font-size: 13px; color: var(--muted); margin-top: 6px; font-weight: 500; }
+
+        .ex-zones { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; flex: 1; }
+        .ex-zone  { background: var(--red-light); border: 2px solid rgba(230,29,43,0.15); border-radius: 18px; padding: 28px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; }
+        .ex-zone-lbl  { font-size: 12px; font-weight: 700; color: var(--red); letter-spacing: 1.5px; text-transform: uppercase; }
+        .ex-zone-name { font-size: 20px; font-weight: 800; color: var(--text); line-height: 1.3; }
+
+        .ex-his { display: flex; flex-direction: column; gap: 14px; flex: 1; }
+        .ex-hi  { background: white; border: 2px solid var(--border); border-radius: 16px; padding: 18px 22px; display: flex; gap: 18px; align-items: center; }
+        .ex-hi-icon  { width: 48px; height: 48px; background: var(--red-light); border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 22px; }
+        .ex-hi-title { font-size: 17px; font-weight: 700; color: var(--text); }
+        .ex-hi-desc  { font-size: 14px; color: var(--muted); margin-top: 3px; }
+
+        .ex-outcome { background: linear-gradient(135deg,#fff5f5,white); border: 2px solid rgba(230,29,43,0.2); border-radius: 16px; padding: 18px 22px; display: flex; gap: 16px; align-items: center; }
+        .ex-outcome-icon { font-size: 28px; flex-shrink: 0; }
+        .ex-outcome-text { font-size: 15px; color: var(--text); line-height: 1.6; }
+
+        /* ════════════════════════════════════
+           SLIDES 6-8 · 城市B数据
+        ════════════════════════════════════ */
+        #slide-6 { display: flex; flex-direction: column; }
+        #slide-7 { display: flex; flex-direction: column; }
+        #slide-8 { display: flex; flex-direction: column; }
+
+        /* 柱状图 */
+        .s2-body  { flex: 1; min-height: 0; padding: 32px 88px 52px; display: flex; flex-direction: column; gap: 24px; }
+        .chips    { display: flex; gap: 16px; flex-wrap: wrap; }
+        .chip     { background: var(--red-light); color: var(--red); border: 1px solid rgba(230,29,43,0.2); padding: 10px 24px; border-radius: 30px; font-size: 15px; font-weight: 600; }
+        .chart-box { flex: 1; min-height: 0; background: white; border: 2px solid var(--border); border-radius: 20px; padding: 28px 24px 12px; display: flex; }
+        .chart-box svg { flex: 1; }
+
+        /* 热力图 */
+        .s3-body { flex: 1; min-height: 0; padding: 36px 88px 52px; display: flex; flex-direction: column; gap: 28px; }
+        .heat-grid   { display: grid; grid-template-columns: repeat(5,1fr); gap: 24px; flex: 1; min-height: 0; }
+        .heat-card   { border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 36px 20px; color: white; position: relative; }
+        .heat-card .hc-date    { font-size: 17px; font-weight: 600; opacity: 0.85; }
+        .heat-card .hc-session { font-size: 14px; opacity: 0.72; }
+        .heat-card .hc-num     { font-size: 76px; font-weight: 900; line-height: 1; }
+        .heat-card .hc-unit    { font-size: 20px; opacity: 0.8; }
+        .heat-high   { background: linear-gradient(145deg,var(--red),#b8000d); box-shadow: 0 12px 40px rgba(230,29,43,0.3); }
+        .heat-medium { background: linear-gradient(145deg,#ff6b6b,#e03a3a); box-shadow: 0 8px 28px rgba(255,107,107,0.3); }
+        .heat-peak   { background: linear-gradient(145deg,#5c0000,var(--red-dark)); box-shadow: 0 16px 56px rgba(92,0,0,0.4); transform: scale(1.04); z-index: 1; }
+        .peak-badge  { position: absolute; top: 18px; right: 18px; font-size: 12px; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; }
+        .s3-legend   { display: flex; align-items: center; gap: 32px; }
+        .legend-item { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--muted); font-weight: 500; }
+        .legend-swatch { width: 22px; height: 22px; border-radius: 6px; }
+        .s3-insight      { background: linear-gradient(135deg,#fff5f5,white); border: 2px solid rgba(230,29,43,0.18); border-radius: 16px; padding: 22px 28px; display: flex; align-items: center; gap: 18px; }
+        .s3-insight-icon { font-size: 28px; flex-shrink: 0; }
+        .s3-insight-text { font-size: 17px; color: var(--text); line-height: 1.7; }
+
+        /* 客户结构 */
+        .s4-body { flex: 1; min-height: 0; padding: 36px 88px 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .s4-panel { background: white; border: 2px solid var(--border); border-radius: 24px; padding: 44px; display: flex; flex-direction: column; gap: 26px; }
+        .s4-panel-title { font-size: 24px; font-weight: 800; color: var(--text); display: flex; align-items: center; gap: 14px; }
+        .s4-panel-title::before { content: ""; width: 6px; height: 30px; background: var(--red); border-radius: 3px; }
+        .s4-big          { display: flex; align-items: baseline; gap: 10px; }
+        .s4-big-num      { font-size: 80px; font-weight: 900; color: var(--red); line-height: 1; }
+        .s4-big-unit     { font-size: 22px; color: var(--muted); }
+        .s4-progress-stack { display: flex; flex-direction: column; gap: 16px; }
+        .s4-progress-item  { display: flex; flex-direction: column; gap: 7px; }
+        .s4-progress-meta  { display: flex; justify-content: space-between; font-size: 15px; color: var(--muted); }
+        .s4-bar-track { height: 12px; background: var(--bg); border-radius: 6px; overflow: hidden; }
+        .s4-bar-fill  { height: 100%; background: linear-gradient(90deg,var(--red),#ff6b6b); border-radius: 6px; }
+        .s4-rows      { display: flex; flex-direction: column; gap: 12px; }
+        .s4-row       { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; background: var(--bg); border-radius: 12px; }
+        .s4-row-label { font-size: 16px; color: var(--text); }
+        .s4-row-value { font-size: 17px; font-weight: 700; color: var(--red); }
+        .s4-cus-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .s4-cus-tag   { border: 2px solid var(--border); border-radius: 14px; padding: 16px 20px; font-size: 16px; font-weight: 600; color: var(--text); display: flex; align-items: center; gap: 10px; }
+        .s4-cus-tag.ft { border-color: var(--red); background: var(--red-light); color: var(--red); }
+        .s4-cus-dot   { width: 8px; height: 8px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+
+        /* ── 导航 ── */
+        .nav {
+            position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+            display: flex; align-items: center; gap: 16px; z-index: 9999;
+            background: rgba(0,0,0,0.45); padding: 11px 20px; border-radius: 40px;
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+        }
+        .nav-btn { width: 42px; height: 42px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.28); background: transparent; color: white; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; padding-bottom: 1px; }
+        .nav-btn:hover:not(:disabled) { background: var(--red); border-color: var(--red); }
+        .nav-btn:disabled { opacity: 0.28; cursor: default; }
+        .nav-dots { display: flex; gap: 8px; align-items: center; }
+        .nav-dot  { width: 8px; height: 8px; border-radius: 4px; background: rgba(255,255,255,0.32); cursor: pointer; transition: all 0.25s; }
+        .nav-dot.active { background: white; width: 26px; }
+        .nav-count { font-size: 13px; color: rgba(255,255,255,0.55); font-weight: 600; min-width: 36px; text-align: center; }
+        .key-hint  { position: fixed; bottom: 28px; right: 40px; font-size: 12px; color: rgba(255,255,255,0.3); z-index: 9999; }
+    </style>
+</head>
+
+<body>
+<div class="pres" id="pres">
+
+<!-- ══════════════════════════════════════
+     SLIDE 1 · 封面总览
+══════════════════════════════════════ -->
+<div class="slide active" id="slide-1">
+    <div class="cv-layout">
+        <div class="cv-top">
+            <div class="cv-logo">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none"
+                     stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+            <div class="cv-title-block">
+                <div class="cv-main-title">AI Infra 基础设施参观</div>
+                <div class="cv-sub-title">某头部云厂商 · 双城实践复盘</div>
+            </div>
+            <div class="cv-year">项目周期</div>
+        </div>
+
+        <div class="cv-events">
+            <!-- 城市A -->
+            <div class="cv-card">
+                <div class="cv-card-header">
+                    <span class="cv-card-city">城市A</span>
+                    <span class="cv-card-event">某行业生态大会</span>
+                </div>
+                <div class="cv-card-loc">某算力中心展厅 + 核心设施参观</div>
+                <div class="cv-stats">
+                    <div class="cv-mini">
+                        <span class="cv-mini-val">800+</span>
+                        <span class="cv-mini-lbl">总嘉宾</span>
+                    </div>
+                    <div class="cv-mini">
+                        <span class="cv-mini-val">35</span>
+                        <span class="cv-mini-lbl">批展厅参观</span>
+                    </div>
+                    <div class="cv-mini">
+                        <span class="cv-mini-val">20+</span>
+                        <span class="cv-mini-lbl">区域团队</span>
+                    </div>
+                </div>
+                <div class="cv-extra">另有 200+ VIP嘉宾参观算力中心机房（共20批次）</div>
+            </div>
+
+            <!-- 城市B -->
+            <div class="cv-card">
+                <div class="cv-card-header">
+                    <span class="cv-card-city">城市B</span>
+                    <span class="cv-card-event">某大型展会</span>
+                </div>
+                <div class="cv-card-loc">某算力园区展示中心 · 核心设施参观</div>
+                <div class="cv-stats">
+                    <div class="cv-mini">
+                        <span class="cv-mini-val">290</span>
+                        <span class="cv-mini-lbl">总嘉宾</span>
+                    </div>
+                    <div class="cv-mini">
+                        <span class="cv-mini-val">19</span>
+                        <span class="cv-mini-lbl">区域团队</span>
+                    </div>
+                    <div class="cv-mini">
+                        <span class="cv-mini-val">3</span>
+                        <span class="cv-mini-lbl">天覆盖</span>
+                    </div>
+                </div>
+                <div class="cv-extra">预约峰值出现在活动高峰时段 · 68人单场次 · 24个活跃时段</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-stripe"></div>
+    <div class="slide-badge">1 / 8</div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SLIDE 2 · 城市A 算力中心参观概览
+══════════════════════════════════════ -->
+<div class="slide pos-right" id="slide-2">
+    <div class="s1-layout">
+        <div class="s1-red">
+            <div class="s1-brand">
+                <div class="s1-brand-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+                         stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <span class="s1-brand-name">某头部云厂商 · AI Infra</span>
+            </div>
+            <div class="s1-hero">
+                <div class="s1-tag">某行业生态大会 · 城市A</div>
+                <div class="s1-title">算力中心展厅<br>核心设施参观<br>接待复盘</div>
+                <div class="s1-desc">
+                    20+区域团队协同参与<br>
+                    展厅 + 机房双线接待<br>
+                    政府与行业客户全覆盖
+                </div>
+            </div>
+            <div class="s1-meta">
+                <div class="s1-meta-row">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    截至活动复盘周期数据统计
+                </div>
+                <div class="s1-meta-row">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    区域A · 某算力中心
+                </div>
+            </div>
+        </div>
+
+        <div class="s1-right">
+            <div class="s1-section-label">核心数据指标</div>
+            <div class="s1-stats">
+                <div class="s1-stat">
+                    <span class="s1-stat-val">800+</span>
+                    <span class="s1-stat-lbl">总接待嘉宾</span>
+                </div>
+                <div class="s1-stat">
+                    <span class="s1-stat-val">35</span>
+                    <span class="s1-stat-lbl">展厅接待批次</span>
+                </div>
+                <div class="s1-stat">
+                    <span class="s1-stat-val">20</span>
+                    <span class="s1-stat-lbl">VIP核心设施参观批次</span>
+                </div>
+                <div class="s1-stat">
+                    <span class="s1-stat-val">20+</span>
+                    <span class="s1-stat-lbl">参与区域团队</span>
+                </div>
+            </div>
+            <div class="s1-callout">
+                <div class="s1-callout-title">活动亮点</div>
+                <div class="s1-callout-text">
+                    VIP嘉宾 <span class="hl">200+人</span> 获邀参观算力中心机房；
+                    设置 <span class="hl">4大展区</span>、<span class="hl">50+展点</span>，联合 <span class="hl">10+伙伴</span> 方案呈现；
+                    深度体验 <span class="hl">某高性能算力节点</span>，展示头部厂商面向未来的新一代架构。
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-stripe"></div>
+    <div class="slide-badge">2 / 8</div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SLIDE 3 · 城市A 一线客户反馈
+══════════════════════════════════════ -->
+<div class="slide pos-right" id="slide-3">
+    <div class="slide-header">
+        <div class="header-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+                 stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+        </div>
+        <h2>一线客户反馈</h2>
+        <div class="header-sub">城市A算力中心参观 · 5个区域团队实录</div>
+        <div class="header-tag">某行业生态大会</div>
+        <div class="header-page">3 / 8</div>
+    </div>
+
+    <div class="fb-body">
+        <div class="fb-grid">
+            <!-- 区域A -->
+            <div class="fb-card">
+                <div class="fb-bar"><span class="fb-name">区域团队A</span></div>
+                <div class="fb-pts">
+                    <div class="fb-pt"><div class="fb-dot"></div>赞赏液冷走线方式、换热、备电发电机等布局设计</div>
+                    <div class="fb-pt"><div class="fb-dot"></div>对机房和某核心硬件平台的设计理念非常认可</div>
+                    <div class="fb-pt"><div class="fb-dot"></div>超节点参观中对该厂商自研特性、工艺与设计理念印象深刻</div>
+                </div>
+                <div class="fb-tag">🏙️ 区域A</div>
+            </div>
+            <!-- 区域B -->
+            <div class="fb-card">
+                <div class="fb-bar"><span class="fb-name">区域团队B</span></div>
+                <div class="fb-pts">
+                    <div class="fb-pt"><div class="fb-dot"></div>整体体验非常好，大幅增强客户对该厂商的信心</div>
+                    <div class="fb-pt"><div class="fb-dot"></div>参观方式和讲解专业，展厅整体大气</div>
+                    <div class="fb-pt"><div class="fb-dot"></div>核心设施参观是活动亮点，强化了对平台可靠性的认知</div>
+                </div>
+                <div class="fb-tag">🏙️ 区域B</div>
+            </div>
+            <!-- 区域C -->
+            <div class="fb-card">
+                <div class="fb-bar"><span class="fb-name">区域团队C</span></div>
+                <div class="fb-pts">
+                    <div class="fb-pt"><div class="fb-dot"></div>算力中心管理严格规范，讲解简明清晰</div>
+                    <div class="fb-pt"><div class="fb-dot"></div>某高性能算力节点演示印象深刻</div>
+                    <div class="fb-pt"><div class="fb-dot"></div>液冷/降耗讲解简明扼要，现场参观震撼人心</div>
+                </div>
+                <div class="fb-tag">🏙️ 区域C</div>
+            </div>
+            <!-- 区域D -->
+            <div class="fb-card">
+                <div class="fb-bar"><span class="fb-name">区域团队D</span></div>
+                <div class="fb-pts">
+                    <div class="fb-pt"><div class="fb-dot"></div>某汽车客户对超节点与展厅整体评价非常高</div>
+                    <div class="fb-pt"><div class="fb-dot"></div>对超节点和机房节能技术表现浓厚兴趣</div>
+                    <div class="fb-pt"><div class="fb-dot"></div>对某AI算力产品系列非常认可</div>
+                </div>
+                <div class="fb-tag">🏙️ 区域D</div>
+            </div>
+            <!-- 区域E -->
+            <div class="fb-card">
+                <div class="fb-bar"><span class="fb-name">区域团队E</span></div>
+                <div class="fb-pts">
+                    <div class="fb-pt"><div class="fb-dot"></div>科技感与未来氛围印象深刻，动线设计流畅</div>
+                    <div class="fb-pt"><div class="fb-dot"></div>互动性与参与感突出，讲解生动形象</div>
+                    <div class="fb-pt"><div class="fb-dot"></div>某高性能算力集群展示令人震撼</div>
+                </div>
+                <div class="fb-tag">🏙️ 区域E</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-stripe"></div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SLIDE 4 · 城市A 展示成果与亮点
+══════════════════════════════════════ -->
+<div class="slide pos-right" id="slide-4">
+    <div class="slide-header">
+        <div class="header-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+                 stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+        </div>
+        <h2>展示成果与亮点</h2>
+        <div class="header-sub">头部云厂商整体能力展示</div>
+        <div class="header-tag">某行业生态大会</div>
+        <div class="header-page">4 / 8</div>
+    </div>
+
+    <div class="ex-body">
+        <!-- 左：4展区 -->
+        <div class="ex-panel">
+            <div class="ex-title">四大展区架构</div>
+            <div class="ex-metrics">
+                <div class="ex-metric">
+                    <div class="ex-metric-val">50+</div>
+                    <div class="ex-metric-lbl">展示点位</div>
+                </div>
+                <div class="ex-metric">
+                    <div class="ex-metric-val">10+</div>
+                    <div class="ex-metric-lbl">联合伙伴方案</div>
+                </div>
+            </div>
+            <div class="ex-zones">
+                <div class="ex-zone">
+                    <div class="ex-zone-lbl">展区一</div>
+                    <div class="ex-zone-name">全球存算网</div>
+                </div>
+                <div class="ex-zone">
+                    <div class="ex-zone-lbl">展区二</div>
+                    <div class="ex-zone-name">基础设施</div>
+                </div>
+                <div class="ex-zone">
+                    <div class="ex-zone-lbl">展区三</div>
+                    <div class="ex-zone-name">云服务创新</div>
+                </div>
+                <div class="ex-zone">
+                    <div class="ex-zone-lbl">展区四</div>
+                    <div class="ex-zone-name">产业生态</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右：核心亮点 -->
+        <div class="ex-panel">
+            <div class="ex-title">核心亮点</div>
+            <div class="ex-his">
+                <div class="ex-hi">
+                    <div class="ex-hi-icon">🖥️</div>
+                    <div>
+                        <div class="ex-hi-title">某高性能算力节点深度体验</div>
+                        <div class="ex-hi-desc">展示头部厂商面向未来的新一代架构与技术竞争力</div>
+                    </div>
+                </div>
+                <div class="ex-hi">
+                    <div class="ex-hi-icon">🏭</div>
+                    <div>
+                        <div class="ex-hi-title">VIP算力中心核心设施参观</div>
+                        <div class="ex-hi-desc">共20批次、200+位VIP嘉宾深度参观机房</div>
+                    </div>
+                </div>
+                <div class="ex-hi">
+                    <div class="ex-hi-icon">❄️</div>
+                    <div>
+                        <div class="ex-hi-title">液冷技术与节能方案展示</div>
+                        <div class="ex-hi-desc">液冷走线、换热、备电等基础设施全方位呈现</div>
+                    </div>
+                </div>
+                <div class="ex-hi">
+                    <div class="ex-hi-icon">🤝</div>
+                    <div>
+                        <div class="ex-hi-title">10+联合伙伴方案协同展示</div>
+                        <div class="ex-hi-desc">某生态伙伴协同呈现生态能力</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ex-outcome">
+                <div class="ex-outcome-icon">🎯</div>
+                <div class="ex-outcome-text">
+                    <strong>附加成果：</strong>某生态伙伴通过现场讲解演示，成功售出
+                    <span class="hl">2个翻译耳机</span> + <span class="hl">1个翻译器</span>，实现展会即时转化。
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-stripe"></div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SLIDE 5 · 城市B 展会参观概览
+══════════════════════════════════════ -->
+<div class="slide pos-right" id="slide-5">
+    <div class="s1-layout">
+        <div class="s1-red">
+            <div class="s1-brand">
+                <div class="s1-brand-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+                         stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <span class="s1-brand-name">某头部云厂商 · AI Infra</span>
+            </div>
+            <div class="s1-hero">
+                <div class="s1-tag">某大型展会 · 城市B</div>
+                <div class="s1-title">xxx算力中心<br>参观接待<br>全程复盘</div>
+                <div class="s1-desc">
+                    19个区域团队协同参与<br>
+                    AI 基础设施沉浸式展示<br>
+                    政府 + 重点企业双轨覆盖
+                </div>
+            </div>
+            <div class="s1-meta">
+                <div class="s1-meta-row">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    活动周期内
+                </div>
+                <div class="s1-meta-row">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    某大型会展中心
+                </div>
+            </div>
+        </div>
+
+        <div class="s1-right">
+            <div class="s1-section-label">核心数据指标</div>
+            <div class="s1-stats">
+                <div class="s1-stat">
+                    <span class="s1-stat-val">290</span>
+                    <span class="s1-stat-lbl">总预约人数</span>
+                </div>
+                <div class="s1-stat">
+                    <span class="s1-stat-val">19</span>
+                    <span class="s1-stat-lbl">参与区域团队</span>
+                </div>
+                <div class="s1-stat">
+                    <span class="s1-stat-val">24</span>
+                    <span class="s1-stat-lbl">活跃时段数</span>
+                </div>
+                <div class="s1-stat">
+                    <span class="s1-stat-val">3</span>
+                    <span class="s1-stat-lbl">覆盖天数</span>
+                </div>
+            </div>
+            <div class="s1-callout">
+                <div class="s1-callout-title">活动亮点</div>
+                <div class="s1-callout-text">
+                    政府客户占比达 <span class="hl">52%</span>，含 <span class="hl">27个数据局</span>；
+                    重点千卡企业 <span class="hl">7家</span>（头部客户A / B / C 等）；
+                    预约高峰为 <span class="hl">活动高峰时段</span>，单场次达68人。
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-stripe"></div>
+    <div class="slide-badge">5 / 8</div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SLIDE 6 · 城市B 各区域团队预约分布
+══════════════════════════════════════ -->
+<div class="slide pos-right" id="slide-6">
+    <div class="slide-header">
+        <div class="header-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+                 stroke="white" stroke-width="2.5" stroke-linecap="round">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6"  y1="20" x2="6"  y2="14"/>
+            </svg>
+        </div>
+        <h2>各区域团队预约人数分布</h2>
+        <div class="header-sub">19个区域团队 · 总计 290人</div>
+        <div class="header-tag">某大型展会</div>
+        <div class="header-page">6 / 8</div>
+    </div>
+
+    <div class="s2-body">
+        <div class="chips">
+            <div class="chip">区域B最多 · 12人</div>
+            <div class="chip">区域F次之 · 10人</div>
+            <div class="chip">9个区域团队达8人</div>
+            <div class="chip">最低基准 · 5人</div>
+        </div>
+        <div class="chart-box">
+            <!-- viewBox: 1600×480  chart area x=[100,1560] y=[20,420]
+                 scale: max=15, h=400, 1unit=26.67px
+                 grid: 0→y420  5→y287  10→y153  15→y20
+                 bar heights: 12→320 10→267 8→213 5→133
+                 17 bars, spacing=85, barW=58, centers start at 143 -->
+            <svg viewBox="0 0 1600 480" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                    <linearGradient id="gDef" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%"   stop-color="#E61D2B" stop-opacity="1"/>
+                        <stop offset="100%" stop-color="#ff6b6b" stop-opacity="0.88"/>
+                    </linearGradient>
+                    <linearGradient id="gTop" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%"   stop-color="#5c0000" stop-opacity="1"/>
+                        <stop offset="100%" stop-color="#E61D2B" stop-opacity="1"/>
+                    </linearGradient>
+                    <linearGradient id="gMid" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%"   stop-color="#b30010" stop-opacity="1"/>
+                        <stop offset="100%" stop-color="#E61D2B" stop-opacity="0.9"/>
+                    </linearGradient>
+                </defs>
+                <g stroke="#ebebeb" stroke-width="1">
+                    <line x1="100" y1="20"  x2="1560" y2="20"/>
+                    <line x1="100" y1="153" x2="1560" y2="153"/>
+                    <line x1="100" y1="287" x2="1560" y2="287"/>
+                    <line x1="100" y1="420" x2="1560" y2="420"/>
+                </g>
+                <g fill="#aaa" font-size="18" text-anchor="end" font-family="-apple-system,sans-serif">
+                    <text x="88" y="26">15</text>
+                    <text x="88" y="159">10</text>
+                    <text x="88" y="293">5</text>
+                    <text x="88" y="426">0</text>
+                </g>
+                <line x1="100" y1="20"  x2="100"  y2="420" stroke="#ddd" stroke-width="2"/>
+                <line x1="100" y1="420" x2="1560" y2="420" stroke="#ddd" stroke-width="2"/>
+
+                <!-- 区域F10  center=143 --> <rect x="114" y="153" width="58" height="267" fill="url(#gMid)" rx="6"/><text x="143" y="139" font-size="20" fill="#b30010" text-anchor="middle" font-weight="800" font-family="-apple-system,sans-serif">10</text><text x="143" y="449" font-size="18" fill="#666" text-anchor="middle" font-family="-apple-system,sans-serif">区域F</text>
+                <!-- 区域G5   center=228 --> <rect x="199" y="287" width="58" height="133" fill="url(#gDef)" rx="6" opacity="0.72"/><text x="228" y="273" font-size="20" fill="#E61D2B" text-anchor="middle" font-weight="800" font-family="-apple-system,sans-serif">5</text><text x="228" y="449" font-size="18" fill="#666" text-anchor="middle" font-family="-apple-system,sans-serif">区域G</text>
+                <!-- 区域H8   center=313 --> <rect x="284" y="207" width="58" height="213" fill="url(#gDef)" rx="6"/><text x="313" y="193" font-size="20" fill="#E61D2B" text-anchor="middle" font-weight="800" font-family="-apple-system,sans-serif">8</text><text x="313" y="449" font-size="18" fill="#666" text-anchor="middle" font-family="-apple-system,sans-serif">区域H</text>
+                <!-- 区域B12  center=398 --> <rect x="369" y="100" width="58" height="320" fill="url(#gTop)" rx="6"/><text x="398" y="86" font-size="20" fill="#5c0000" text-anchor="middle" font-weight="800" font-family="-apple-system,sans-serif">12</text><text x="398" y="449" font-size="18" fill="#333" text-anchor="middle" font-weight="700" font-family="-apple-system,sans-serif">区域B</text>
+                <!-- 区域I5   center=483 --> <rect x="454" y="287" width="58" height="133" fill="url(#gDef)" rx="6" opacity="0.72"/><text x="483" y="273" font-size="20" fill="#E61D2B" text-anchor="middle" font-weight="800" font-family="-apple-system,sans-serif">5</text><text x="483" y="449" font-size="18" fill="#666" text-anchor="middle" font-family="-apple-system,sans-serif">区域I</text>
+                <!-- 区域C8   center=568 --> <rect x="539" y="207" width="58" height="213" fill="url(#gDef)" rx="6"/><text x="568" y="193" font-size="20" fill="#E61D2B" text-anchor="middle" font-weight="800" font-family="-apple-system,sans-serif">8</text><text x="568" y="449" font-size="18" fill="#666" text-anchor="middle" font-family="-apple-system,sans-serif">区域C</text>
+                <!-- 区域J8   center=653 --> <rect x="624" y="207" width="58" height="213" fill="url(#gDef)" rx="6"/><text x="653" y="193" font-size="20" fill="#E61D2B" text-anchor="middle" font-weight="800" font-family="-apple-system,sans-serif">8</text><text x="653" y="449" font-size="18" fill="#666" text-anchor="middle" font-family="-apple-system,sans-serif">区域J</text>
+                <!-- 区域K8   center=738 --> <rect x="709" y="207" width="58" height="213" fill="url(#gDef)" rx="6"/><text x="738" y="193" font-size="20" fill="#E61D2B" text-anchor="middle" font-weight="800" font-family="-apple-system,sans-serif">8</text><text x="738" y="449" font-size="18" fill="#666" text-anchor="middle" font-family="-apple-system,sans-serif">区域K</text>
+                <!-- 区域L5   center=823 --> <rect x="794" y="287" width="58" height="133" fill="url(#gDef)" rx="6" opacity="0.72"/><text x="823" y="273" font-size="20" fill="#E61D2B" text-anchor="middle" font-weight="800" font-family="-apple-system,sans-serif">5</text><text x="823" y="449" font-size="18" fill="#666" text-anchor="middle" font-family="-apple-system,sans-serif">区域L</text>
+                <!-- 区域M5   center=908 --> <rect x="879" y="287" width="58" height="133" fill="url(#gDef)" rx="6" opacity="0.72"/><text x="908" y="273" font-size="20" fill="#E61D2B" text-anchor="middle" font-weight="800" font-family="-apple-system,sans-serif">5</text><text x="908" y="449" font-size="18" fill="#666" text-anchor="middle" font-family="-apple-system,sans-serif">区域M</text>
+                <!-- 区域N5   center=993 --> <rect x="964" y="287" width="58" height="133" fill="url(#gDef)" rx="6" opacity="0.72"/><text x="993" y="273" font-size="20" fill="#E61D2B" text-anchor="middle" font-weight="800" font-family="-apple-system,sans-serif">5</text><text x="993" y="449" font-size="18" fill="#666" text-anchor="middle" font-family="-apple-system,sans-serif">区域N</text>
+                <!-- 汽车团8 center=1078 --> <rect x="1049" y="207" width="58" height="213" fill="url(#gDef)" rx="6"/><text x="1078" y="193" font-size="20" fill="#E61D2B" text-anchor="middle" font-weight="800" font-family="-apple-system,sans-serif">8</text><text x="1078" y="449" font-size="16" fill="#666" text-anchor="middle" font-family="-apple-system,sans-serif">汽车团</text>
+                <!-- 区域O8   center=1163 --> <rect x="1134" y="207" width="58" height="213" fill="url(#gDef)" rx="6"/><text x="1163" y="193" font-size="20" fill="#E61D2B" text-anchor="middle" font-weight="800" font-family="-apple-system,sans-serif">8</text><text x="1163" y="449" font-size="18" fill="#666" text-anchor="middle" font-family="-apple-system,sans-serif">区域O</text>
+                <!-- 区域P5   center=1248 --> <rect x="1219" y="287" width="58" height="133" fill="url(#gDef)" rx="6" opacity="0.72"/><text x="1248" y="273" font-size="20" fill="#E61D2B" text-anchor="middle" font-weight="800" font-family="-apple-system,sans-serif">5</text><text x="1248" y="449" font-size="18" fill="#666" text-anchor="middle" font-family="-apple-system,sans-serif">区域P</text>
+                <!-- 区域Q8   center=1333 --> <rect x="1304" y="207" width="58" height="213" fill="url(#gDef)" rx="6"/><text x="1333" y="193" font-size="20" fill="#E61D2B" text-anchor="middle" font-weight="800" font-family="-apple-system,sans-serif">8</text><text x="1333" y="449" font-size="18" fill="#666" text-anchor="middle" font-family="-apple-system,sans-serif">区域Q</text>
+                <!-- 区域R5 center=1418 --> <rect x="1389" y="287" width="58" height="133" fill="url(#gDef)" rx="6" opacity="0.72"/><text x="1418" y="273" font-size="20" fill="#E61D2B" text-anchor="middle" font-weight="800" font-family="-apple-system,sans-serif">5</text><text x="1418" y="449" font-size="16" fill="#666" text-anchor="middle" font-family="-apple-system,sans-serif">区域R</text>
+                <!-- 区域A5   center=1503 --> <rect x="1474" y="287" width="58" height="133" fill="url(#gDef)" rx="6" opacity="0.72"/><text x="1503" y="273" font-size="20" fill="#E61D2B" text-anchor="middle" font-weight="800" font-family="-apple-system,sans-serif">5</text><text x="1503" y="449" font-size="18" fill="#666" text-anchor="middle" font-family="-apple-system,sans-serif">区域A</text>
+            </svg>
+        </div>
+    </div>
+    <div class="footer-stripe"></div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SLIDE 7 · 城市B 时段热度分布
+══════════════════════════════════════ -->
+<div class="slide pos-right" id="slide-7">
+    <div class="slide-header">
+        <div class="header-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+                 stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+            </svg>
+        </div>
+        <h2>时段预约热度分布</h2>
+        <div class="header-sub">活动周期内 · 分时段统计</div>
+        <div class="header-tag">某大型展会</div>
+        <div class="header-page">7 / 8</div>
+    </div>
+
+    <div class="s3-body">
+        <div class="heat-grid">
+            <div class="heat-card heat-high">
+                <div class="hc-date">第1天</div>
+                <div class="hc-session">上午场次</div>
+                <div class="hc-num">45</div>
+                <div class="hc-unit">人</div>
+            </div>
+            <div class="heat-card heat-medium">
+                <div class="hc-date">第1天</div>
+                <div class="hc-session">下午场次</div>
+                <div class="hc-num">28</div>
+                <div class="hc-unit">人</div>
+            </div>
+            <div class="heat-card heat-peak">
+                <div class="peak-badge">🔥 高峰</div>
+                <div class="hc-date">第2天</div>
+                <div class="hc-session">上午场次</div>
+                <div class="hc-num">68</div>
+                <div class="hc-unit">人</div>
+            </div>
+            <div class="heat-card heat-medium">
+                <div class="hc-date">第2天</div>
+                <div class="hc-session">下午场次</div>
+                <div class="hc-num">35</div>
+                <div class="hc-unit">人</div>
+            </div>
+            <div class="heat-card heat-high">
+                <div class="hc-date">第3天</div>
+                <div class="hc-session">全天</div>
+                <div class="hc-num">52</div>
+                <div class="hc-unit">人</div>
+            </div>
+        </div>
+
+        <div class="s3-legend">
+            <div class="legend-item"><div class="legend-swatch" style="background:#5c0000;"></div>高峰场次（≥60人）</div>
+            <div class="legend-item"><div class="legend-swatch" style="background:#E61D2B;"></div>高热（40–60人）</div>
+            <div class="legend-item"><div class="legend-swatch" style="background:#ff6b6b;"></div>中热（20–40人）</div>
+        </div>
+
+        <div class="s3-insight">
+            <div class="s3-insight-icon">💡</div>
+            <div class="s3-insight-text">
+                <strong>关键洞察：</strong>活动高峰时段为预约高峰（68人），建议增派讲解人员及安保配置；
+                政府客户集中选择上午场次，千卡企业客户偏好下午进行深度技术交流。
+            </div>
+        </div>
+    </div>
+    <div class="footer-stripe"></div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SLIDE 8 · 城市B 客户结构分析
+══════════════════════════════════════ -->
+<div class="slide pos-right" id="slide-8">
+    <div class="slide-header">
+        <div class="header-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+                 stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+        </div>
+        <h2>客户结构分析</h2>
+        <div class="header-sub">政府 + 重点企业 · 双轨覆盖</div>
+        <div class="header-tag">某大型展会</div>
+        <div class="header-page">8 / 8</div>
+    </div>
+
+    <div class="s4-body">
+        <div class="s4-panel">
+            <div class="s4-panel-title">政府客户</div>
+            <div>
+                <div style="font-size:15px;color:var(--muted);margin-bottom:6px;">政府机构占总人数</div>
+                <div class="s4-big">
+                    <div class="s4-big-num">52%</div>
+                    <div class="s4-big-unit">· 152人</div>
+                </div>
+            </div>
+            <div class="s4-progress-stack">
+                <div class="s4-progress-item">
+                    <div class="s4-progress-meta">
+                        <span>政府机构总数（55个 / 152人）</span><span>52%</span>
+                    </div>
+                    <div class="s4-bar-track"><div class="s4-bar-fill" style="width:52%"></div></div>
+                </div>
+                <div class="s4-progress-item">
+                    <div class="s4-progress-meta">
+                        <span>数据局 核心客户（27个 / 82人）</span><span>28%</span>
+                    </div>
+                    <div class="s4-bar-track"><div class="s4-bar-fill" style="width:28%"></div></div>
+                </div>
+            </div>
+            <div class="s4-rows">
+                <div class="s4-row"><span class="s4-row-label">政府机构总数</span><span class="s4-row-value">55个 · 152人</span></div>
+                <div class="s4-row"><span class="s4-row-label">数据局（核心）</span><span class="s4-row-value">27个 · 82人</span></div>
+                <div class="s4-row"><span class="s4-row-label">偏好场次</span><span class="s4-row-value">上午场次</span></div>
+            </div>
+        </div>
+
+        <div class="s4-panel">
+            <div class="s4-panel-title">重点千卡企业客户</div>
+            <div>
+                <div style="font-size:15px;color:var(--muted);margin-bottom:6px;">参与重点企业总数</div>
+                <div class="s4-big">
+                    <div class="s4-big-num">7</div>
+                    <div class="s4-big-unit">家企业</div>
+                </div>
+            </div>
+            <div class="s4-cus-grid">
+                <div class="s4-cus-tag ft"><div class="s4-cus-dot"></div>头部客户A（重点）</div>
+                <div class="s4-cus-tag"><div class="s4-cus-dot"></div>头部客户B</div>
+                <div class="s4-cus-tag"><div class="s4-cus-dot"></div>头部客户C</div>
+                <div class="s4-cus-tag"><div class="s4-cus-dot"></div>头部客户D</div>
+                <div class="s4-cus-tag"><div class="s4-cus-dot"></div>头部客户E</div>
+                <div class="s4-cus-tag"><div class="s4-cus-dot"></div>头部客户F</div>
+                <div class="s4-cus-tag"><div class="s4-cus-dot"></div>头部客户G</div>
+            </div>
+            <div class="s4-rows">
+                <div class="s4-row"><span class="s4-row-label">行业集中方向</span><span class="s4-row-value">智能汽车 · AI</span></div>
+                <div class="s4-row"><span class="s4-row-label">偏好场次</span><span class="s4-row-value">下午深度交流</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-stripe"></div>
+</div>
+
+</div><!-- /.pres -->
+
+
+<!-- ── 导航 ── -->
+<div class="nav" id="nav">
+    <button class="nav-btn" id="prevBtn" disabled>&#8249;</button>
+    <div class="nav-dots">
+        <div class="nav-dot active" data-i="0"></div>
+        <div class="nav-dot" data-i="1"></div>
+        <div class="nav-dot" data-i="2"></div>
+        <div class="nav-dot" data-i="3"></div>
+        <div class="nav-dot" data-i="4"></div>
+        <div class="nav-dot" data-i="5"></div>
+        <div class="nav-dot" data-i="6"></div>
+        <div class="nav-dot" data-i="7"></div>
+    </div>
+    <div class="nav-count" id="navCount">1 / 8</div>
+    <button class="nav-btn" id="nextBtn">&#8250;</button>
+</div>
+<div class="key-hint">← → Space</div>
+
+<script>
+    const slides  = Array.from(document.querySelectorAll('.slide'));
+    const dots    = Array.from(document.querySelectorAll('.nav-dot'));
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const count   = document.getElementById('navCount');
+    const total   = slides.length;
+    let current   = 0;
+
+    function goTo(n) {
+        if (n === current || n < 0 || n >= total) return;
+        const dir = n > current ? 1 : -1;
+
+        // 把目标幻灯片摆到入场侧（无过渡）
+        slides[n].style.transition = 'none';
+        slides[n].classList.remove('pos-left', 'pos-right', 'active');
+        slides[n].classList.add(dir > 0 ? 'pos-right' : 'pos-left');
+        slides[n].offsetHeight; // force reflow
+        slides[n].style.transition = '';
+
+        // 当前幻灯片退场
+        slides[current].classList.remove('active');
+        slides[current].classList.add(dir > 0 ? 'pos-left' : 'pos-right');
+
+        // 目标幻灯片入场
+        current = n;
+        slides[current].classList.remove('pos-left', 'pos-right');
+        slides[current].classList.add('active');
+
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        count.textContent = `${current + 1} / ${total}`;
+        prevBtn.disabled  = current === 0;
+        nextBtn.disabled  = current === total - 1;
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+    dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.i)));
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); goTo(current + 1); }
+        if (e.key === 'ArrowLeft')                   { e.preventDefault(); goTo(current - 1); }
+    });
+
+    function fitScale() {
+        const s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        document.getElementById('pres').style.transform = `scale(${s})`;
+    }
+    window.addEventListener('resize', fitScale);
+    fitScale();
+</script>
+</body>
+</html>
+html>

@@ -6,6 +6,7 @@
 - `cases/enterprise-ai-demand-conversion/`
 - `cases/ai-market-opportunity-dashboard/`
 - `cases/ai-coding-competitor-timeline/`
+- `cases/ka-customer-visit-journey/`
 
 ## GitHub Pages
 建议在仓库 Settings → Pages 中：

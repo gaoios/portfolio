@@ -301,13 +301,13 @@ body.theme-light {
 
 <!-- ═══ Title Bar ═══ -->
 <div class="topbar">
-  <h1 id="pageTitle">国内云企业产品内容洞察</h1>
+  <h1 id="pageTitle">阿里云 × 字节内容对比看板</h1>
   <div class="topbar-right">
     <div class="brand-toggles" id="brandToggles"></div>
     <button class="load-btn" style="color:var(--txt);border-color:var(--bd);" id="themeBtn">☀️ 浅色</button>
     <button class="load-btn" style="color:#10B981;border-color:rgba(16,185,129,0.3);" id="exportBtn">📸 导出长图</button>
     <div class="total-badge" id="totalBadge" style="display:none"></div>
-    <button class="load-btn" id="loadBtn">＋ 加载数据</button>
+    <button class="load-btn" id="loadBtn">＋ 加载更多数据</button>
     <input type="file" id="fileInput" multiple accept=".json" style="display:none">
   </div>
 </div>
@@ -340,8 +340,8 @@ body.theme-light {
 <!-- ═══ Empty State ═══ -->
 <div class="empty-state" id="emptyState">
   <div style="font-size:48px">📊</div>
-  <h2>国内云企业产品内容洞察</h2>
-  <p>加载一个或多个 JSON 数据文件，即可开始对比不同账号/品牌的内容分布。</p>
+  <h2>阿里云 × 字节内容洞察</h2>
+  <p>默认加载阿里云与字节数据；如需扩展对比，可继续追加更多 JSON 数据文件。</p>
   <p style="font-size:11px;color:var(--dim)">支持格式：标准 Swimlane JSON（可通过 convert_to_swimlane.py 转换生成）</p>
   <button class="empty-load-btn" id="emptyLoadBtn">选择 JSON 文件</button>
 </div>
@@ -494,7 +494,7 @@ function rebuildAll() {
   document.getElementById('swimContainer').style.display = 'flex';
 
   const names = [...brands.values()].filter(b=>b.active).map(b => b.meta.name || b.meta.id).join(' vs ');
-  document.getElementById('pageTitle').textContent = names || '泳道对比看板';
+  document.getElementById('pageTitle').textContent = names || '阿里云 × 字节内容对比看板';
 
   buildToggles();
   buildNavMonths();
@@ -537,7 +537,7 @@ function toggleBrand(id) {
 function updateTotalBadge() {
   let total = 0;
   brands.forEach(b => { if (b.active) total += b.items.length; });
-  document.getElementById('totalBadge').textContent = `共 ${total} 条`;
+  document.getElementById('totalBadge').textContent = `当前 ${total} 条`;
 }
 
 /* ═══ MONTH NAV ═══ */
@@ -908,9 +908,7 @@ const urlParams = new URLSearchParams(location.search);
 const dataUrls = urlParams.get('data');
 const defaultDataUrls = [
   '../../data/ali.json',
-  '../../data/vol.json',
-  '../../data/huaweikunling.json',
-  '../../data/huaweizhengqi.json'
+  '../../data/vol.json'
 ];
 const urlsToLoad = dataUrls ? dataUrls.split(',') : defaultDataUrls;
 Promise.all(urlsToLoad.map(url => fetch(url).then(r => r.json())))

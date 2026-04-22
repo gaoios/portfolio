@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企业 AI 需求识别与商机转化设计</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f7f8fa;
+        }
+
+        /* 自定义复选框样式 */
+        .custom-checkbox {
+            appearance: none;
+            background-color: #fff;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.15em;
+            height: 1.15em;
+            border: 1px solid #d1d5db;
+            border-radius: 0.15em;
+            display: grid;
+            place-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .custom-checkbox::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em white;
+            background-color: white;
+            transform-origin: center;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
+
+        .custom-checkbox:checked {
+            background-color: #cc0000;
+            border-color: #cc0000;
+        }
+
+        .custom-checkbox:checked::before {
+            transform: scale(1);
+        }
+
+        /* 自定义单选框样式 */
+        .custom-radio {
+            appearance: none;
+            background-color: #fff;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.15em;
+            height: 1.15em;
+            border: 1px solid #d1d5db;
+            border-radius: 50%;
+            display: grid;
+            place-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .custom-radio::before {
+            content: "";
+            width: 0.5em;
+            height: 0.5em;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            background-color: white;
+        }
+
+        .custom-radio:checked {
+            background-color: #cc0000;
+            border-color: #cc0000;
+        }
+
+        .custom-radio:checked::before {
+            transform: scale(1);
+        }
+
+        /* 选中状态容器样式 */
+        :has(> input:checked) {
+            border-color: #cc0000 !important;
+            background-color: #fffafa !important;
+        }
+
+        /* 输入框底部边框动效 */
+        .input-line {
+            position: relative;
+        }
+        
+        .input-line::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #cc0000;
+            transition: width 0.3s ease;
+        }
+
+        .input-line:focus-within::after {
+            width: 100%;
+        }
+
+        .form-input {
+            border-bottom: 1px solid #e5e7eb;
+            transition: border-color 0.3s;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-bottom-color: transparent;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-start min-h-screen pt-4 md:pt-10 px-4 pb-10">
+
+    <div class="w-full max-w-md bg-white rounded-xl shadow-lg overflow-hidden">
+        
+        <!-- 顶部横幅 -->
+        <div class="bg-gray-50 py-4 px-2 text-center border-b border-gray-100">
+            <h2 class="text-[#cc0000] font-bold text-[13px] sm:text-[14px] tracking-wide relative z-10">
+                企业 AI 高频需求识别｜基于真实业务痛点的商机转化设计
+            </h2>
+        </div>
+
+        <!-- 表单内容区 -->
+        <div class="p-6 md:p-8">
+            <form action="#" method="POST" class="space-y-8">
+                
+                <!-- 业务痛点场景 (多选) -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <label class="text-gray-900 font-bold text-[15px]">您迫切想解决的业务痛点？</label>
+                        <span class="text-gray-400 text-xs">(多选)</span>
+                        <span class="text-red-500 font-bold">*</span>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <label class="flex items-start gap-3 p-3 border border-gray-200 rounded-lg cursor-pointer hover:border-red-300 transition-colors group">
+                            <input type="checkbox" name="pain_point" value="短视频营销" class="custom-checkbox mt-0.5 flex-shrink-0">
+                            <div>
+                                <div class="text-[14px] font-semibold text-gray-800">📹 视频/图文营销产能不足</div>
+                                <div class="text-[12px] text-gray-500 mt-1">拍摄成本高、剪辑慢，想一键生成宣传片或数字人播报。</div>
+                            </div>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 border border-gray-200 rounded-lg cursor-pointer hover:border-red-300 transition-colors group">
+                            <input type="checkbox" name="pain_point" value="知识库" class="custom-checkbox mt-0.5 flex-shrink-0">
+                            <div>
+                                <div class="text-[14px] font-semibold text-gray-800">🧠 内部资料沉睡，查阅费时</div>
+                                <div class="text-[12px] text-gray-500 mt-1">新人培训慢，需要搭建能极速检索回答的企业/客服知识库。</div>
+                            </div>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 border border-gray-200 rounded-lg cursor-pointer hover:border-red-300 transition-colors group">
+                            <input type="checkbox" name="pain_point" value="数据分析" class="custom-checkbox mt-0.5 flex-shrink-0">
+                            <div>
+                                <div class="text-[14px] font-semibold text-gray-800">📊 数据汇总分析全靠硬算</div>
+                                <div class="text-[12px] text-gray-500 mt-1">有大量表格和报表，想要一句话智能问数、自动生成调研报告。</div>
+                            </div>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 border border-gray-200 rounded-lg cursor-pointer hover:border-red-300 transition-colors group">
+                            <input type="checkbox" name="pain_point" value="案头办公" class="custom-checkbox mt-0.5 flex-shrink-0">
+                            <div>
+                                <div class="text-[14px] font-semibold text-gray-800">📝 日常案头办公繁琐低效</div>
+                                <div class="text-[12px] text-gray-500 mt-1">例如HR系统筛选简历、法务审长合同挑错、写各种宣发文案。</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 行业领域 (下拉单选框风格) -->
+                <div>
+                    <label class="block text-gray-900 font-bold text-[15px] mb-3">您的所属行业 <span class="text-red-500">*</span></label>
+                    <select class="w-full form-input py-2 bg-transparent text-gray-800 text-[14px] cursor-pointer focus:outline-none focus:border-red-500 border border-t-0 border-r-0 border-l-0 border-b-gray-200 pb-2">
+                        <option value="" disabled selected>点击选择您的行业，为您匹配最佳案例</option>
+                        <option value="高科技/软件">高科技 / 信息化软件</option>
+                        <option value="医疗/健康">医疗健康 / 医药</option>
+                        <option value="广告/传媒">广告传媒 / 自媒体</option>
+                        <option value="金融/法律">金融 / 法律服务</option>
+                        <option value="制造/供应链">传统老牌制造业</option>
+                        <option value="教育/培训">教育培训</option>
+                        <option value="其他">其他领域</option>
+                    </select>
+                </div>
+
+                <!-- 部署偏好 -->
+                <div>
+                    <label class="block text-gray-900 font-bold text-[15px] mb-3">对数据合规与部署的要求 <span class="text-red-500">*</span></label>
+                    <div class="space-y-3">
+                        <label class="flex items-start gap-3 p-3 border border-gray-200 rounded-lg cursor-pointer hover:border-red-300 transition-colors flex-1">
+                            <input type="radio" name="deployment" value="saas" class="custom-radio mt-0.5 flex-shrink-0" checked>
+                            <div>
+                                <div class="text-[14px] font-medium text-gray-800">高性价比与快速落地（推荐）</div>
+                                <div class="text-[12px] text-gray-500 mt-0.5">公有云SaaS调用，快速集成到现有企微或平台。</div>
+                            </div>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 border border-gray-200 rounded-lg cursor-pointer hover:border-red-300 transition-colors flex-1">
+                            <input type="radio" name="deployment" value="private" class="custom-radio mt-0.5 flex-shrink-0">
+                            <div>
+                                <div class="text-[14px] font-medium text-gray-800">极致的数据安全合规</div>
+                                <div class="text-[12px] text-gray-500 mt-0.5">要求核心数据不出域，企业专有云或私有化部署。</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 个人信息 -->
+                <div class="space-y-6 pt-2">
+                    <div class="input-line relative">
+                        <label class="block text-gray-700 font-medium text-[14px] mb-1">
+                            公司名称 <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" placeholder="请输入主体名称" required
+                            class="form-input w-full py-2 bg-transparent text-gray-800 placeholder-gray-400 text-[14px]">
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="input-line relative flex-1">
+                            <label class="block text-gray-700 font-medium text-[14px] mb-1">
+                                您的称呼 <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" placeholder="如：李总" required
+                                class="form-input w-full py-2 bg-transparent text-gray-800 placeholder-gray-400 text-[14px]">
+                        </div>
+                        
+                        <div class="input-line relative flex-1">
+                            <label class="block text-gray-700 font-medium text-[14px] mb-1">
+                                联系电话 <span class="text-red-500">*</span>
+                            </label>
+                            <input type="tel" placeholder="用于接收方案" required
+                                class="form-input w-full py-2 bg-transparent text-gray-800 placeholder-gray-400 text-[14px]">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 协议与提交 -->
+                <div class="pt-4">
+                    <label class="flex items-center gap-2 mb-5 cursor-pointer">
+                        <input type="checkbox" checked class="custom-checkbox flex-shrink-0 w-3.5 h-3.5 border-gray-300">
+                        <span class="text-[12px] text-gray-500">
+                            同意隐私协议并授权方案顾问联系我查看 
+                            <a href="#" class="text-blue-500 hover:text-blue-600 hover:underline">《授权书》</a>
+                        </span>
+                    </label>
+
+                    <button type="submit" 
+                        class="w-full bg-[#cc0000] hover:bg-[#b30000] text-white font-bold py-3.5 rounded-lg shadow-md transition-colors duration-300 text-[16px] tracking-wide flex justify-center items-center">
+                        获取匹配我行业的专属方案
+                    </button>
+                    <p class="text-center text-[11px] text-gray-400 mt-3 flex justify-center items-center gap-1">
+                        🔒 您的留资信息将受到严格加密保护
+                    </p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

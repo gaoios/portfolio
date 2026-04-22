@@ -1,0 +1,1268 @@
+{
+  "meta": {
+    "id": "vol",
+    "name": "火山引擎",
+    "icon": "🌋",
+    "color": "#2563EB",
+    "colorSecondary": "#3B82F6"
+  },
+  "categories": [
+    {
+      "id": "🔺 Tier 1: 战略级旗舰峰会",
+      "name": "🔺 Tier 1: 战略级旗舰峰会",
+      "icon": "🔺"
+    },
+    {
+      "id": "🎯 Tier 2: 战役级核心活动与发布",
+      "name": "🎯 Tier 2: 战役级核心活动与发布",
+      "icon": "🎯"
+    },
+    {
+      "id": "🚀 Tier 3: 战术级生态与常态化运营",
+      "name": "🚀 Tier 3: 战术级生态与常态化运营",
+      "icon": "🚀"
+    }
+  ],
+  "items": [
+    {
+      "title": "玩转跨境直播，声影同传“豆包”了",
+      "summary": "火山引擎为跨境直播打造得力 “翻译官”",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-01-02",
+      "url": "https://mp.weixin.qq.com/s/XL8eFU85vR3VFIhaY6A66Q",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "豆包大模型1.5正式发布，全面上线火山方舟",
+      "summary": "加量不加价，欢迎体验！",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-01-22",
+      "url": "https://mp.weixin.qq.com/s/ARilxStUARgF_bBrlAa7cw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "火山引擎RTC联合乐鑫、移远：智能硬件注入“豆包”，“模”力升级",
+      "summary": "火山引擎RTC助力人工智能快速“成长”",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-01-22",
+      "url": "https://mp.weixin.qq.com/s/V2Kq__thOrg1wqvOrtsHtg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "中信银行携手豆包大模型，为年味加点“AI”",
+      "summary": "火山引擎为中信银行增添满满 “AI” 意",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-01-23",
+      "url": "https://mp.weixin.qq.com/s/jLwI7BKdr8cQaiQfKDwXvw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "在火山引擎用DeepSeek，更稳更快：500万TPM、30ms低延迟",
+      "summary": "联网搜索应用已上线，欢迎体验！",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-02-13",
+      "url": "https://mp.weixin.qq.com/s/z0wkrH_OvmOzoolLjTnn6A",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "一键部署！阶跃星辰开源多模态模型上线火山引擎",
+      "summary": "火山引擎为阶跃星辰打造高性价比部署方案",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-02-28",
+      "url": "https://mp.weixin.qq.com/s/XulW9BwTh4nVkcAcWp6ZDg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "应用，开源！",
+      "summary": "易集成、易落地、更开放",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-03-03",
+      "url": "https://mp.weixin.qq.com/s/L3LRLDgvA3VFQoMQYuM8Ew",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "央视点赞！南开大学10天造了8000个AI智能体",
+      "summary": "基于火山引擎HiAgent打造AI创新应用平台NK-GeniOS",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-03-11",
+      "url": "https://mp.weixin.qq.com/s/0xmVKGZ3OTru7LBoo6w26w",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "国内首款AI原生IDE Trae接入火山引擎，支持自定义大模型",
+      "summary": "通过接入火山引擎大模型资源，满足开发者个性化需求",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-03-13",
+      "url": "https://mp.weixin.qq.com/s/CeTM9DhCi0lXBoVdPAIYhA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "央视点赞！中关村论坛“首席AI翻译官”上岗",
+      "summary": "语音+字幕实时翻译，还能复刻演讲者音色",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-03-28",
+      "url": "https://mp.weixin.qq.com/s/zHnF_x4QP33_O91phTEXiw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Thinking风暴一触即发！2025 Force Link AI 创新巡展来了",
+      "summary": "4月17日，杭州见",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "上海",
+      "date": "2025-04-07",
+      "url": "https://mp.weixin.qq.com/s/QE59fD_eizrJthjagp_TLg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "10+芯片和模组商集体适配！让智能硬件能听会看还会唠",
+      "summary": "火山引擎RTC正式开源实时对话式AI嵌入式硬件方案",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "深圳",
+      "date": "2025-04-08",
+      "url": "https://mp.weixin.qq.com/s/yZr9uXU4p8kzeKVLNMN-QQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "单机8卡GPU，私密云计算平台升级！",
+      "summary": "火山引擎与NVIDIA合作，强化数据安全和隐私保护",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-04-09",
+      "url": "https://mp.weixin.qq.com/s/RK13O23nNwnN7q4GlMlSYA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "2024公有云大模型调用量，火山引擎中国第一！",
+      "summary": "市场份额46.4%",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-04-10",
+      "url": "https://mp.weixin.qq.com/s/Wmm_SjWwQhXU5mZ6UOdVUA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "火山方舟TPM保障包全量发布！",
+      "summary": "模型推理超低延迟、超高保障",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-04-15",
+      "url": "https://mp.weixin.qq.com/s/eNkEgEHGfiGRWl5IsLSo8w",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "《流浪地球3》官宣AI新同事WEi！火山引擎提供技术支持",
+      "summary": "火山引擎助力打造“宝藏”AI问答应用",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "青岛",
+      "date": "2025-04-16",
+      "url": "https://mp.weixin.qq.com/s/YWieEqPR6rex1sejxVfX7A",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "新款豆包大模型，明天见！",
+      "summary": "📢2025<a href=\"https://mp.weixin.qq.com/mp/readtemplate?t=pages/link_mid_jump&amp;biz=MzI0NzU1NzI5NQ==\" target=\"_blank\" class=\"js_mention_entry wx_at_link\" data-biz=\"MzI0NzU1NzI5NQ==\" data-username=\"gh",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "杭州",
+      "date": "2025-04-16",
+      "url": "https://mp.weixin.qq.com/s/to_SLcUy2joGTIUhz9CLLw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "豆包1.5·深度思考模型发布！效果好、低延迟、多模态",
+      "summary": "帮企业做好Agent",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "杭州",
+      "date": "2025-04-17",
+      "url": "https://mp.weixin.qq.com/s/RYJ2OiZM_M-Jh27x3OFEdg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "4月22日深圳！来看AI落地实战经验“坦白局”",
+      "summary": "不见不散",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "广州",
+      "date": "2025-04-20",
+      "url": "https://mp.weixin.qq.com/s/OFRoLxNpWCK91fGe6TCq_g",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "豆包大模型产业落地加速，多款智能体工具发布",
+      "summary": "火山引擎全栈AI服务已落地千行百业",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-04-22",
+      "url": "https://mp.weixin.qq.com/s/cUOVVBLmgpjpmEdEi_uPFg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "涂鸦智能接入豆包大模型，端云协同让AI硬件“能说会看”",
+      "summary": "共同打造更完善的开发者生态",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "深圳",
+      "date": "2025-04-23",
+      "url": "https://mp.weixin.qq.com/s/rjqhMdpn0zihDT5Ph5OFFQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "字节跳动发布 EthLink，填补以太网 GPU Scale-up 互联协议空白",
+      "summary": "低延迟、高带宽",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-04-29",
+      "url": "https://mp.weixin.qq.com/s/LiyKd7MDO1NJUddrcHHSzQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "火山引擎DBCopilot发布：用AI搞定数据“存管取”",
+      "summary": "数据库AI副驾驶来啦！",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-05-07",
+      "url": "https://mp.weixin.qq.com/s/NBK4ToMX8jNWhCJVbNcL6Q",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "AI技术如何连接产业刚需？5月13日上海站带你破局！",
+      "summary": "5月13日14:00，不见不散",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "上海",
+      "date": "2025-05-07",
+      "url": "https://mp.weixin.qq.com/s/VmtgWBBm9B8EqD5F1xBTAQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "行业首发！联想携手火山引擎推出可信个人云方案",
+      "summary": "联想携手火山引擎首发PC端可信云方案",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-05-09",
+      "url": "https://mp.weixin.qq.com/s/kDYXOAF7HiPSmCXcG3qTLg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "豆包全新视频生成模型、视觉深度思考模型发布",
+      "summary": "Seedance 1.0 lite模型来啦",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "上海",
+      "date": "2025-05-13",
+      "url": "https://mp.weixin.qq.com/s/Eojy5caM_YzXr565scphBw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "2025 FORCE原动力大会，6月11-12日见！",
+      "summary": "精彩日程抢先看",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "未知/全国/线上",
+      "date": "2025-05-16",
+      "url": "https://mp.weixin.qq.com/s/0PWe80PpQeMc61LnwifRGg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "火山引擎发布MCP Servers",
+      "summary": "打造端到端落地的大模型应用",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-05-19",
+      "url": "https://mp.weixin.qq.com/s/4ovziU9wrfO9maNQGxwQRw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "豆包·语音播客模型来了！",
+      "summary": "秒级创作“超逼真”双人播客",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-05-20",
+      "url": "https://mp.weixin.qq.com/s/-paLFjwLYf-lpPJYx_5DNw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "国内首个！上海虹口上线区域级教育智能体平台",
+      "summary": "虹口区教师百日打造177个教育智能体",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "上海",
+      "date": "2025-05-21",
+      "url": "https://mp.weixin.qq.com/s/T_-fiqvAy_Pbl5jXXYgHfQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "划重点！「2025春季FORCE原动力大会」核心话题早知道",
+      "summary": "「<a href=\"https://mp.weixin.qq.com/mp/readtemplate?t=pages/link_mid_jump&amp;biz=MzI0NzU1NzI5NQ==\" target=\"_blank\" class=\"js_mention_entry wx_at_link\" data-biz=\"MzI0NzU1NzI5NQ==\" data-username=\"gh_dbe",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "北京",
+      "date": "2025-05-22",
+      "url": "https://mp.weixin.qq.com/s/cGSYfAZLf5PcFUIT_WAuSw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "东风汽车奕派007接入豆包大模型",
+      "summary": "Z世代的“AI出行搭子”来了",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-05-23",
+      "url": "https://mp.weixin.qq.com/s/-2d_0eCW2oCJpeKiVUHnPg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "牵手超五成985高校，火山引擎“大学朋友圈”再扩容",
+      "summary": "加速教学、科研、管理、服务等场景智能化转型",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-05-23",
+      "url": "https://mp.weixin.qq.com/s/_BVfjgpPaID62eletkQA4g",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "瑞幸咖啡接入豆包大模型：动动嘴就能点咖啡",
+      "summary": "瑞幸AI智能体（1.0版）上线啦",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-05-27",
+      "url": "https://mp.weixin.qq.com/s/qFjlWK27XyTeiGAruFXNqQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "FORCE 原动力大会10+专场论坛课程表来了！",
+      "summary": "🌋「2025 FORCE 原动力大会·春」即将开幕\n⚠️ 请查收这份专场论坛指南！\n\n💡 豆包大模型家族全面升级\n🌟 更有10+专场分论坛等你解锁\n✅ 从 AI 技术革新到行业场景落地\n✅ 从产品创新到生态协同\n全方位剖析 AI 智能时代的无限可能！\n\n📅 2025年6月11日\n📍 北京\n✨ 即刻收藏论坛指南，共赴智能未来之约",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "北京",
+      "date": "2025-05-29",
+      "url": "https://mp.weixin.qq.com/s/C5ejg-raO8X7ZXjfZHg10Q",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "开发者专场，见证Agent开发新范式",
+      "summary": "6月12日，不见不散！",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-05-29",
+      "url": "https://mp.weixin.qq.com/s/bC747ktxGKy4MKta5m3Glw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "DeepSeek-R1-0528上线火山方舟，新客5折！",
+      "summary": "提供大模型调用服务“天花板”",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-05-29",
+      "url": "https://mp.weixin.qq.com/s/tZYE8NMhzznMScX3NMoRgg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "倒计时！在FORCE原动力大会遇见有温度的科技",
+      "summary": "6月11日，见证科技向善",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "未知/全国/线上",
+      "date": "2025-06-03",
+      "url": "https://mp.weixin.qq.com/s/5wfzzxP_Z_FTHlBqiA2sMw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "倒计时5天！FORCE原动力大会参会指南来了",
+      "summary": "6月11日，北京见！",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "未知/全国/线上",
+      "date": "2025-06-06",
+      "url": "https://mp.weixin.qq.com/s/c_7wLXI3Rf-qOAAsyB4Igg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "当「豆包」进入千行百业，他们超爱",
+      "summary": "你手边的「豆包」，也是深入企业研产供销服的「助手」",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-06-09",
+      "url": "https://mp.weixin.qq.com/s/JO8B8s0wb39wd6HwwjH2kg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "FORCE原动力大会最新剧透，明天见！",
+      "summary": "明天，一起看看大模型领域的新东西",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "未知/全国/线上",
+      "date": "2025-06-10",
+      "url": "https://mp.weixin.qq.com/s/EM8bHkw2PeWCNxyBAYQksw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "豆包大模型1.6发布，AI云原生全栈服务升级",
+      "summary": "价格最低！",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-06-11",
+      "url": "https://mp.weixin.qq.com/s/CiN0XRWQc3hIV9lLLS0rGA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "一图读懂｜火山引擎FORCE大会讲了啥？",
+      "summary": "",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "未知/全国/线上",
+      "date": "2025-06-11",
+      "url": "https://mp.weixin.qq.com/s/O9k6_9Lkw-Q_QIK1VfBgvQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "PromptPilot发布：AI“嘴替”帮你优化每个指令",
+      "summary": "模糊需求，秒变清晰",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-06-12",
+      "url": "https://mp.weixin.qq.com/s/GsF7cZJ1i8R86qCSqqx0sw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "FORCE开发者论坛｜火山引擎发布多款Agent开发工具",
+      "summary": "",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-06-12",
+      "url": "https://mp.weixin.qq.com/s/yAoKo8JWHxS3ap4BzyvwFw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "企业级AI搜索引擎亮相！一体化方案驱动业务增长",
+      "summary": "开箱即用",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-06-13",
+      "url": "https://mp.weixin.qq.com/s/PU-VlVj3ewSsRnNiQYfdww",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "火山方舟一站式模型服务再升级",
+      "summary": "更强模型、更低价格、更易落地",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-06-13",
+      "url": "https://mp.weixin.qq.com/s/QAWDfc_yKT09s5WFShIhGg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "智联万物再升级，火山引擎AI硬件全栈方案发布",
+      "summary": "勾勒AIoT产业演进图景",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "上海",
+      "date": "2025-06-16",
+      "url": "https://mp.weixin.qq.com/s/iH0ag425ri47zSiZsmPmTA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "接入豆包大模型，极氪打造“会思考”的智能座舱",
+      "summary": "智能座舱怎么做？",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-06-16",
+      "url": "https://mp.weixin.qq.com/s/O47nzaNmeOlGiYfX2iLHiQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "安卓厂商集合！TA们这么用豆包大模型",
+      "summary": "全球TOP10手机厂商9家选择火山引擎",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-06-17",
+      "url": "https://mp.weixin.qq.com/s/kxHz_dPCiubmqp6Lct7UjQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "详解Seedance 1.0 pro：性能更强、性价比更高",
+      "summary": "主打实用的视频生成模型，长什么样？",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-06-18",
+      "url": "https://mp.weixin.qq.com/s/Wv0eTUOGX_ORTtAH6Dn6Rw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "HiAgent 2.0正式发布，让Agent在千企万厂“持证上岗”",
+      "summary": "打造企业AI中台",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-06-24",
+      "url": "https://mp.weixin.qq.com/s/CFkWsnsf-O4kB-maxFLZ7A",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Seed1.6-Embedding模型登顶多榜单SOTA",
+      "summary": "首发全模态混合检索",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-06-25",
+      "url": "https://mp.weixin.qq.com/s/E6nZRi_Bpag2TxtC0Wqoyg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "火山引擎金融大模型解决方案升级！",
+      "summary": "推出AI原生App与数字员工两大应用",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-06-27",
+      "url": "https://mp.weixin.qq.com/s/OwILnkdW6x3Wyb8CSzqaAg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "来厦门！解锁豆包大模型家族新成员",
+      "summary": "7月30日，来厦门聊点真东西～",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "广州",
+      "date": "2025-07-21",
+      "url": "https://mp.weixin.qq.com/s/pT1v1mypTGs6jkjQ8r4yBw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "豆包·同声传译模型2.0来了：3s延迟，实时声音复刻",
+      "summary": "告别机械翻译",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "厦门",
+      "date": "2025-07-24",
+      "url": "https://mp.weixin.qq.com/s/SIxU-Dr7-pq4XuMC-toxSA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "央视点赞！凌云光·元客视界×火山引擎：打造数字人光场重建方案",
+      "summary": "数字人制作成本降低一半",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-07-28",
+      "url": "https://mp.weixin.qq.com/s/62UTQVk93Xb3RbJhTHRSUw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "左滑，全新豆包图像编辑模型带你变幻一“厦”",
+      "summary": "🌊 沙坡尾的童话，土楼的闽南风韵\n📷 双子塔的浪漫，厦大的别样诗意...\n📍 厦门的每一寸景致背后，可能还有隐藏风景\n\n豆包·图像编辑模型3.0\n带你来厦门开启一场 AI City walk之旅～\n只需一点编辑，就能大不相同\n\n以上图片由全新豆包·图像编辑模型3.0 编辑生成，带你解锁多样玩法：\n👉 更强图像保持能力 - 细节刻画，稳定如一\n👉 更强指令遵循能力 - 精准理解你的创意意图\n👉 更强",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "厦门",
+      "date": "2025-07-29",
+      "url": "https://mp.weixin.qq.com/s/5CY2PVeC119LOePs4YRYJw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "豆包·图像编辑模型3.0发布，扣子正式开源！",
+      "summary": "2款豆包新模型、3款模型服务发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "厦门",
+      "date": "2025-07-30",
+      "url": "https://mp.weixin.qq.com/s/SumKouPO-7zllWnbnZPPGQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "来火山引擎一键部署扣子开源版！",
+      "summary": "火山引擎持续开源中",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "厦门",
+      "date": "2025-07-31",
+      "url": "https://mp.weixin.qq.com/s/ZYiIXcwF0ahXjVHEbgn59A",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "接入豆包大模型，小米浏览器AI了",
+      "summary": "「米粉」有福了，现在升级这两个功能",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-08-01",
+      "url": "https://mp.weixin.qq.com/s/K4dYPsQQDmK8m3aM5iekXQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "HiAgent新升级！打造与企业一起成长的智能体工作台",
+      "summary": "为企业打造「数字员工派遣站」",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "厦门",
+      "date": "2025-08-01",
+      "url": "https://mp.weixin.qq.com/s/WVwEq8Bn6xSetZFs-hVyDg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "厦门大学×火山引擎：如何让高校「教管研」智能升级",
+      "summary": "以AI为底座构建智慧高校",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "厦门",
+      "date": "2025-08-04",
+      "url": "https://mp.weixin.qq.com/s/19xZySip1zMZhONC5XvIjg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "齐鲁大地搞AI，那叫一个杠赛来！",
+      "summary": "8月13日，AI创新巡展·青岛站，实战开讲！",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "青岛",
+      "date": "2025-08-06",
+      "url": "https://mp.weixin.qq.com/s/cFH9X8htoSLR6E33TNJYXA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "金山办公×火山引擎：原生Office办公智能体「WPS灵犀」来了！",
+      "summary": "人人拥有AI办公助理的时代来了",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-08-07",
+      "url": "https://mp.weixin.qq.com/s/tfxChl4cp2FtGvixa_uO8A",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "接入豆包大模型，酷开OTT大屏的花式玩法",
+      "summary": "动动嘴即享智能服务",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-08-08",
+      "url": "https://mp.weixin.qq.com/s/WE6yHU6qndG0bgS9eZZTag",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "维他动力×火山引擎：具身智能如何点亮你的赛博生活",
+      "summary": "人形机器人之外的具身智能，会有什么样子？",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-08-08",
+      "url": "https://mp.weixin.qq.com/s/-Vm2EPPrrJ2D8miWuc1QnQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "华西证券×火山引擎：完善数据治理，助力AI+",
+      "summary": "华西证券以数据治理加速AI落地",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "成都",
+      "date": "2025-08-11",
+      "url": "https://mp.weixin.qq.com/s/0V6fQGezGmQohr6E2j7Nnw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "北京市十一学校×火山引擎：全球AI少年齐聚北京，以代码会友",
+      "summary": "最年轻的科学奥林匹克盛会落幕",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "北京",
+      "date": "2025-08-11",
+      "url": "https://mp.weixin.qq.com/s/ySTPMt75DmCK0MDTyCol-A",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "广汽集团×火山引擎：出海合规助力企业新增长",
+      "summary": "落实“合规要求-控制措施-执行落地”的闭环",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-08-12",
+      "url": "https://mp.weixin.qq.com/s/wzgzmly2v_47wk7n_Nq-Lw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "PromptPilot全模型兼容，数据产品能力上新！",
+      "summary": "3款Agent工具上新啦",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "青岛",
+      "date": "2025-08-13",
+      "url": "https://mp.weixin.qq.com/s/_w2pmuDDS0MB4Jct8EuFYg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "山东产业升级“杠赛来”的秘诀，藏在与火山引擎共写的转型故事里！",
+      "summary": "看山东百业如何借“AI”跑出新业态",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "青岛",
+      "date": "2025-08-14",
+      "url": "https://mp.weixin.qq.com/s/FolFt65h-5BqVBrXjpnn4Q",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Data Agent再升级：一客一策，营销服务的理想型来了！",
+      "summary": "营销人必看的新产品",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "青岛",
+      "date": "2025-08-15",
+      "url": "https://mp.weixin.qq.com/s/8r44y7Z-_qgT_KnsU_8aNw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "来火山引擎「算子广场」，一键处理多模态数据",
+      "summary": "像搭积木一样，拖拽即可快速编排多模态数据处理的工作流",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "青岛",
+      "date": "2025-08-15",
+      "url": "https://mp.weixin.qq.com/s/6yxDzhYLY8porYue4zRGNQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "DeepSeek-V3.1 上线火山方舟",
+      "summary": "同款效果，更优性能",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-08-22",
+      "url": "https://mp.weixin.qq.com/s/9d9-Eyxgomjn_yZUAndRhg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "升级智能硬件解决方案，火山引擎助力IoT场景创新",
+      "summary": "更高效、低门槛助力IoT硬件平台落地",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "深圳",
+      "date": "2025-08-22",
+      "url": "https://mp.weixin.qq.com/s/rJfIZW4ku8PnIO4V5uGhQA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "山东大学×火山引擎：人人用AI，人人可构建智能体",
+      "summary": "全方位建设“数智山大”",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-08-28",
+      "url": "https://mp.weixin.qq.com/s/PPydnpFpN-6qgest53NMmQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "巡展成都站｜天府蓉城玩AI，那叫一个巴适！",
+      "summary": "9月9日，成都不见不散！",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "成都",
+      "date": "2025-09-03",
+      "url": "https://mp.weixin.qq.com/s/5s81-dS_e4O9PsorozKFxg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Claude用不了？火山引擎为开发者上线“搬家”方案",
+      "summary": "立即实现同等场景能力",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-09-05",
+      "url": "https://mp.weixin.qq.com/s/hOhUTMlAYJr90f1dXatdRg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "豆包·图像创作模型Seedream 4.0正式发布！",
+      "summary": "支持4K高清多图创作",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-09-09",
+      "url": "https://mp.weixin.qq.com/s/Fk0YFDg1lSUENdSqXtC-aw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "火山引擎veCLI发布，开启智能开发新模式",
+      "summary": "veCLI无缝集成云服务与豆包大模型1.6重构开发体验",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-09-12",
+      "url": "https://mp.weixin.qq.com/s/-UTsE4yDf2XRrbpP3TqOww",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "告别AI应用“金鱼记忆”，火山引擎发布Viking长期记忆",
+      "summary": "提供更聪明、更连贯、更高效的AI交互体验",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-09-18",
+      "url": "https://mp.weixin.qq.com/s/HoahTaUKxoKXa8-s-seD-g",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "2025H1大模型公有云服务，火山引擎占比49.2%中国第一",
+      "summary": "2025上半年，大模型调用量再突破！",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-09-19",
+      "url": "https://mp.weixin.qq.com/s/ptDBa9siRIoWWLdNLrPGCw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "民生银行运营场景大模型大赛收官，火山引擎助应用创新",
+      "summary": "助力“人机协同”工作模式在实际业务中落地见效",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-09-19",
+      "url": "https://mp.weixin.qq.com/s/hVIMMnkhS_9U3L43m5GyQg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "好未来×火山引擎：低代码编程，让孩子变身“小小开发者”",
+      "summary": "AI重塑少儿创客教育",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-09-22",
+      "url": "https://mp.weixin.qq.com/s/ixvjI600mv8Z6MdjZj-RGA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "首次！豆包、即梦同款视觉模型支持Lora微调",
+      "summary": "在炉米Lumi平台，定制专属的视觉IP风格",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-09-25",
+      "url": "https://mp.weixin.qq.com/s/Eo4PQzD0nS0tTzXuKnha9w",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "赛力斯凤凰×火山引擎: 达成具身智能合作！",
+      "summary": "共创人工智能应用新生态",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-10-09",
+      "url": "https://mp.weixin.qq.com/s/HepPCQFZZh8Z7Kl-xWAXDw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "网易互娱×火山引擎：《蛋仔派对》AI新玩法，地图你来定！",
+      "summary": "豆包一句话生图，DIY地图直接玩",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "武汉",
+      "date": "2025-10-11",
+      "url": "https://mp.weixin.qq.com/s/Uy-DUYGfkAAgVa3cB8lFSw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "升级版“蓝心小V”亮相，豆包大模型助力vivo打造AI原生体验",
+      "summary": "豆包大模型加持，专属智能更懂你",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "武汉",
+      "date": "2025-10-14",
+      "url": "https://mp.weixin.qq.com/s/Owihu_B6hWHikNH33ov8KA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "明天武汉！解锁豆包大模型家族新成员",
+      "summary": "",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "武汉",
+      "date": "2025-10-15",
+      "url": "https://mp.weixin.qq.com/s/CJIpQPZEL3y1qdtwtIIZLQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "新发布！四款豆包大模型了解一下！",
+      "summary": "豆包大模型1.6系列+2款豆包语音模型发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "武汉",
+      "date": "2025-10-16",
+      "url": "https://mp.weixin.qq.com/s/bCDC1DFI0xHl95qPoyFWgw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "AI云原生套件升级！火山引擎加速构建企业级Agent开发新范式",
+      "summary": "三大套件上新能力、多行业应用落地",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-10-28",
+      "url": "https://mp.weixin.qq.com/s/eeG2JGva_WueoVEhm42obw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "破解AI安全信任难题：火山方舟首发MaaS原生机密推理服务",
+      "summary": "原生内置，开箱即用！",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-10-28",
+      "url": "https://mp.weixin.qq.com/s/FYwi4TLfjKt9AMgOuDZQXQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "开源可信MCP，AICC机密计算新升级！",
+      "summary": "加速Agent落地，可信MCP解决方案来了",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-10-30",
+      "url": "https://mp.weixin.qq.com/s/fMX-XnQs4Py6Iatz21BCbw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "豆包编程模型发布！AI程序员双十一大促9.9元到岗",
+      "summary": "兼容Anthropic API，首月最低9块9",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-11-11",
+      "url": "https://mp.weixin.qq.com/s/PWaaFJmnw1jsvofKNKBMjQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "火山引擎领跑Gartner®全球AI应⽤开发平台「挑战者」象限",
+      "summary": "探索AI云最佳实践",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-11-19",
+      "url": "https://mp.weixin.qq.com/s/Ehdo0fUzQEcd1jKPkrQMfQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "火山引擎FORCE原动力大会·冬，定档12月18日",
+      "summary": "报名已开启",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "未知/全国/线上",
+      "date": "2025-11-25",
+      "url": "https://mp.weixin.qq.com/s/1V8xKy7rUKPoQ0X9DEQaLw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "火山引擎亮相广州车展，豆包大模型新车搭载量行业第一",
+      "summary": "助力超九成主流车企AI升级",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "广州",
+      "date": "2025-11-26",
+      "url": "https://mp.weixin.qq.com/s/V3esRUolHHJegr1x-fgKdw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "上汽大众×火山引擎：AICC机密计算，为AI应用打造一座“数据安全屋”",
+      "summary": "让数据做到“可用但不可见”",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "上海",
+      "date": "2025-11-28",
+      "url": "https://mp.weixin.qq.com/s/FyyTJZquaucpmHYcomGekg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "华泰证券×火山引擎：打造国内首款AI原生交易APP",
+      "summary": "让每一分钱都有方向",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "上海",
+      "date": "2025-12-02",
+      "url": "https://mp.weixin.qq.com/s/fmNgOf8PLnwPgJezIKMZbg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "豆包图像创作模型Seedream 4.5发布：聚焦商业生产力场景",
+      "summary": "",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "上海",
+      "date": "2025-12-03",
+      "url": "https://mp.weixin.qq.com/s/UXsaqeQTJUbpwGlmI22Xkg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "美的×火山引擎：从产品到营销，让AI更懂“家的温度”",
+      "summary": "AI成为“懂你的管家”",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "上海",
+      "date": "2025-12-04",
+      "url": "https://mp.weixin.qq.com/s/KKYJmu-tXJPwzXVMHV7YFQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "听得清，看得懂！豆包语音识别模型2.0来了",
+      "summary": "13种海外语种精准识别",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "上海",
+      "date": "2025-12-05",
+      "url": "https://mp.weixin.qq.com/s/U3OyDRFXElPbl0EIaBfUGA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "DeepSeek-V3.2正式登陆火山方舟",
+      "summary": "提供“满血版”高质量Tokens服务",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "上海",
+      "date": "2025-12-05",
+      "url": "https://mp.weixin.qq.com/s/c6BUdfMqUtD78Ma49jvv5w",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Haivivi×火山引擎：全球首款端到端语音玩具，让玩偶成为真朋友",
+      "summary": "CocoMate重塑AI玩具陪伴体验",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "上海",
+      "date": "2025-12-08",
+      "url": "https://mp.weixin.qq.com/s/ENtg9AVUpsyonomOCa1kQA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "FORCE原动力大会，七大亮点提前剧透！",
+      "summary": "12.18-12.19 <a target=\"_blank\" class=\"js_poi_entry wx_poi_link\" data-id=\"0.5616136790350711\" data-poiid=\"2623096805284258603\" data-districtid=\"\" data-type=\"1\" data-name=\"%E4%B8%8A%E6%B5%B7%E4%B8%96%E5",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "上海",
+      "date": "2025-12-09",
+      "url": "https://mp.weixin.qq.com/s/OZa7oAqxLy_GptpPqIZl1Q",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "博西家电×火山引擎：打造全能家电管家“西西子”，有温度更懂生活",
+      "summary": "全面打理你的智能家电生活",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "上海",
+      "date": "2025-12-10",
+      "url": "https://mp.weixin.qq.com/s/zKkTxqtZSLAVgsuVCcj-jw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "倒计时3天！火山引擎FORCE大会全议程速览",
+      "summary": "12月18日见",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "未知/全国/线上",
+      "date": "2025-12-15",
+      "url": "https://mp.weixin.qq.com/s/9rqo8jmaPx9OZlJh-gkdAQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "@所有朋友，火山引擎FORCE大会明天见！",
+      "summary": "🌋「2025 FORCE 原动力大会・冬」\n✨ 明日在<a target=\"_blank\" class=\"js_poi_entry wx_poi_link\" data-id=\"0.8545827823655713\" data-poiid=\"2623096805284258603\" data-districtid=\"\" data-type=\"1\" data-name=\"%E4%B8%8A%E6%B5",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "上海",
+      "date": "2025-12-17",
+      "url": "https://mp.weixin.qq.com/s/wq3ztmr_vaB1daJGueCydg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "两大模型发布！豆包大模型日均使用量突破50万亿Tokens",
+      "summary": "豆包大模型1.8、Seedance 1.5 pro正式发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "上海",
+      "date": "2025-12-18",
+      "url": "https://mp.weixin.qq.com/s/wypvdbPmVR8XH4y4G8mS7Q",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "一图看懂｜5大要点讲透火山引擎FORCE大会",
+      "summary": "AI云原生全栈服务升级",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "未知/全国/线上",
+      "date": "2025-12-18",
+      "url": "https://mp.weixin.qq.com/s/m4WPEggVb7YrqqqclbgB7A",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "火山方舟上线模型推理代工服务，探索AI产业新模式",
+      "summary": "让Agent真正创造业务价值",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-12-18",
+      "url": "https://mp.weixin.qq.com/s/GSz4V1NKdZcO--34tGcIUw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "火山引擎AgentKit升级，8大模块让企业Agent快速投产",
+      "summary": "助力产业智能化转型",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-12-18",
+      "url": "https://mp.weixin.qq.com/s/z-j4qWqc3jXL4PuxZdM-lg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "火山引擎HiAgent“1+N+X”智能体工作站发布",
+      "summary": "打造数字员工管理中枢",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "上海",
+      "date": "2025-12-18",
+      "url": "https://mp.weixin.qq.com/s/RPSCeA0fgsNpYvjexQCOMQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "火山引擎“万亿Tokens俱乐部”企业超100家，他们超爱",
+      "summary": "",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-12-19",
+      "url": "https://mp.weixin.qq.com/s/lkr6jsSbeCPVynF12VjYPw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "FORCE开发者日：火山引擎Agent开发者生态全面升级",
+      "summary": "助力Agent构想落地为生产级应用",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "北京",
+      "date": "2025-12-19",
+      "url": "https://mp.weixin.qq.com/s/RcMvQCTWVTGo6X7KZ0noZQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "详解TRAE CN企业版",
+      "summary": "国内首个AI原生IDE",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-12-22",
+      "url": "https://mp.weixin.qq.com/s/jijnSgFspe_7e0eDa9HCxA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "火山引擎发布AI-Solution生态方案",
+      "summary": "共推AI产业落地",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-12-24",
+      "url": "https://mp.weixin.qq.com/s/i98RZJA7PeHVm1dBZVRGAA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "比亚迪×火山引擎：豆包大模型融入DiLink系统，覆盖旗下五大品牌车型",
+      "summary": "驱动座舱AI进化",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-12-24",
+      "url": "https://mp.weixin.qq.com/s/3IDolpM9CtaHbn8t94aukQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "UQI优奇×火山引擎：达成具身智能合作",
+      "summary": "加速“AI+机器人”产业化落地",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "无锡",
+      "date": "2025-12-24",
+      "url": "https://mp.weixin.qq.com/s/Wb7jUaZfnwUvHVmlnTAsuA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "火山引擎护航30+中国车企加速出海",
+      "summary": "助力中国汽车出海行稳致远",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-12-24",
+      "url": "https://mp.weixin.qq.com/s/MifVmmeosjkiuvEdRdRpEQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "火山引擎升级金融全场景智能体解决方案",
+      "summary": "为金融行业注入新动能",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-12-26",
+      "url": "https://mp.weixin.qq.com/s/KTkf1TnioDI6mQgiMxlykQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "官宣！火山引擎成为总台春晚独家AI云合作伙伴",
+      "summary": "打造科技春晚新体验",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "未知/全国/线上",
+      "date": "2025-12-29",
+      "url": "https://mp.weixin.qq.com/s/1GwJWG_QTRWQdd4s8H8vUw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "联想携手火山引擎，共建“个人超级智能体”开发者新生态",
+      "summary": "",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-12-30",
+      "url": "https://mp.weixin.qq.com/s/OMuwoKPe8Gftkn41s03I-w",
+      "reads": 0,
+      "likes": 0
+    }
+  ]
+}

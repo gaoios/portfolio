@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "id": "sample_brand",
+    "name": "示例品牌",
+    "icon": "🏷️",
+    "color": "#2563EB",
+    "colorSecondary": "#3B82F6"
+  },
+  "categories": [
+    {
+      "id": "🔺 Tier 1: 战略级旗舰峰会",
+      "name": "🔺 Tier 1: 战略级旗舰峰会",
+      "icon": "🔺"
+    },
+    {
+      "id": "🎯 Tier 2: 战役级核心活动与发布",
+      "name": "🎯 Tier 2: 战役级核心活动与发布",
+      "icon": "🎯"
+    },
+    {
+      "id": "🚀 Tier 3: 战术级生态与常态化运营",
+      "name": "🚀 Tier 3: 战术级生态与常态化运营",
+      "icon": "🚀"
+    }
+  ],
+  "items": [
+    {
+      "title": "示例：春季发布会正式开幕",
+      "summary": "这是一条摘要，用于悬浮提示展示。",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-03-15",
+      "url": "https://example.com/article-1",
+      "reads": 12000,
+      "likes": 340
+    },
+    {
+      "title": "示例：开发者工具链更新发布",
+      "summary": "全新 SDK 支持更多集成场景。",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-04-20",
+      "url": "https://example.com/article-2",
+      "reads": 8500,
+      "likes": 210
+    },
+    {
+      "title": "示例：上海站 AI 巡展精彩回顾",
+      "summary": "超过500位开发者参与线下交流。",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "上海",
+      "date": "2025-06-08",
+      "url": "https://example.com/article-3",
+      "reads": 6200,
+      "likes": 180
+    }
+  ]
+}

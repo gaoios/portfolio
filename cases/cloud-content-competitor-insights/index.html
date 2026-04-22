@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国内云企业产品内容洞察</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#0B0F1A; --surf:#141928; --card:#1C2438; --bd:rgba(255,255,255,.08);
+  --txt:#DDE2F0; --dim:#6B7897; --dim2:#A0AABF;
+  --mw:300px;
+}
+html,body{height:100dvh;max-height:100dvh;overflow:hidden;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--txt);display:flex;flex-direction:column;}
+
+/* ═══ TOPBAR ═══ */
+.topbar{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;
+  padding:0 16px;background:var(--surf);border-bottom:1px solid var(--bd);
+  height:clamp(40px,5vh,50px);gap:10px;}
+.topbar h1{font-size:clamp(13px,1.3vw,16px);font-weight:800;white-space:nowrap;
+  background:linear-gradient(135deg,#3B82F6,#8B5CF6,#14B8A6);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.topbar-right{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;}
+.brand-toggles{display:flex;gap:6px;align-items:center;}
+.btog{display:flex;align-items:center;gap:5px;padding:4px 12px;border-radius:20px;
+  border:1px solid var(--bd);background:transparent;cursor:pointer;font-size:12px;
+  font-weight:700;color:var(--dim);transition:all .2s;user-select:none;}
+.btog.on{border-color:rgba(var(--rgb),.6);background:rgba(var(--rgb),.15);color:var(--bc);}
+.btog .tog-dot{width:7px;height:7px;border-radius:50%;background:currentColor;flex-shrink:0;}
+.total-badge{padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;
+  background:rgba(255,255,255,.06);border:1px solid var(--bd);color:var(--dim2);white-space:nowrap;}
+
+/* Load button */
+.load-btn{display:flex;align-items:center;gap:5px;padding:4px 12px;border-radius:20px;
+  border:1px dashed rgba(255,255,255,.2);background:transparent;cursor:pointer;
+  font-size:11px;font-weight:700;color:var(--dim2);transition:all .2s;white-space:nowrap;}
+.load-btn:hover{border-color:rgba(255,255,255,.4);color:var(--txt);}
+.empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  flex:1;gap:16px;color:var(--dim);}
+.empty-state h2{font-size:18px;font-weight:700;color:var(--dim2);}
+.empty-state p{font-size:13px;line-height:1.6;text-align:center;max-width:400px;}
+.empty-load-btn{padding:10px 24px;border-radius:10px;border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.06);cursor:pointer;font-size:14px;font-weight:700;
+  color:var(--txt);transition:all .2s;}
+.empty-load-btn:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);}
+
+/* ═══ INFO BAR ═══ */
+.infobar{flex-shrink:0;display:flex;border-bottom:1px solid var(--bd);
+  height:clamp(80px,10vh,100px);overflow-x:auto;overflow-y:hidden;}
+.icard{flex-shrink:0;display:flex;align-items:center;gap:10px;padding:0 16px;
+  border-right:1px solid var(--bd);position:relative;overflow:hidden;min-width:200px;}
+.icard:last-child{border-right:none;}
+.icard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--cc),var(--cc2));}
+.icard::after{content:"";position:absolute;inset:0;opacity:.04;pointer-events:none;
+  background:var(--cc);}
+.icard-icon{font-size:clamp(18px,2vw,24px);flex-shrink:0;}
+.icard-body{min-width:0;flex:1;}
+.icard-title{font-size:clamp(13px,1.3vw,16px);font-weight:800;margin-bottom:4px;color:var(--cc2);}
+.icard-stats{display:flex;gap:8px;flex-wrap:wrap;}
+.brand-stat{display:flex;align-items:center;gap:4px;}
+.bs-logo{font-size:9px;padding:1px 5px;border-radius:4px;font-weight:800;
+  background:rgba(var(--rgb),.2);color:var(--bc);}
+.bs-num{font-size:clamp(16px,1.8vw,22px);font-weight:900;line-height:1;color:var(--bc);}
+.bs-unit{font-size:10px;color:var(--dim);}
+.itags{display:flex;gap:3px;flex-wrap:wrap;margin-top:3px;}
+.itag{padding:1px 6px;border-radius:8px;font-size:9px;font-weight:700;white-space:nowrap;
+  background:rgba(var(--rgb),.15);color:var(--bc);}
+
+/* ═══ MONTH NAV ═══ */
+.nav{flex-shrink:0;display:flex;align-items:center;gap:4px;
+  padding:0 8px 0 calc(clamp(110px,12vw,132px) + 8px);
+  background:var(--card);border-bottom:1px solid var(--bd);height:clamp(34px,4vh,42px);}
+.nav-lbl{font-size:10px;color:var(--dim);font-weight:700;white-space:nowrap;margin-right:2px;}
+.mbtn{padding:2px 9px;border-radius:20px;border:1px solid var(--bd);
+  background:transparent;color:var(--dim);font-size:10px;cursor:pointer;
+  transition:all .15s;white-space:nowrap;flex-shrink:0;}
+.mbtn:hover,.mbtn.active{background:linear-gradient(135deg,#2563EB,#7C3AED);color:#fff;border-color:transparent;}
+
+/* ═══ SWIMLANE ═══ */
+.swim{flex:1;display:flex;overflow:hidden;min-height:0;}
+.labels{flex-shrink:0;width:clamp(110px,12vw,132px);display:flex;flex-direction:column;
+  background:var(--surf);border-right:1px solid var(--bd);z-index:20;}
+.lbl-corner{flex-shrink:0;height:clamp(28px,3.5vh,36px);border-bottom:1px solid var(--bd);}
+.lbl{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:4px;border-bottom:1px solid var(--bd);position:relative;overflow:hidden;}
+.lbl:last-child{border-bottom:none;}
+.lbl::after{content:"";position:absolute;inset:0;opacity:.06;pointer-events:none;background:var(--cc);}
+.lbl-bar{width:4px;height:40px;border-radius:2px;flex-shrink:0;background:linear-gradient(180deg,var(--cc),var(--cc2));}
+.lbl-name{writing-mode:vertical-rl;font-size:clamp(13px,1.3vw,16px);font-weight:800;
+  letter-spacing:1.2px;color:var(--cc2);}
+.lbl-cnt{font-size:10px;color:var(--dim2);font-weight:700;text-align:center;padding:0 4px;}
+.lbl-brands{display:flex;flex-direction:column;gap:3px;align-items:center;margin-top:4px;}
+.lbl-brand-pill{display:flex;align-items:center;gap:3px;padding:2px 6px;border-radius:4px;
+  font-size:8px;font-weight:800;white-space:nowrap;
+  background:rgba(var(--rgb),.18);color:var(--bc);}
+
+.tl{flex:1;overflow-x:auto;overflow-y:hidden;display:flex;flex-direction:column;min-height:0;
+  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.1) transparent;}
+.tl::-webkit-scrollbar{height:4px;}
+.tl::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px;}
+.mrow{flex-shrink:0;display:flex;background:var(--card);border-bottom:1px solid var(--bd);
+  height:clamp(28px,3.5vh,36px);}
+.mcell{flex-shrink:0;width:var(--mw);border-right:1px solid var(--bd);
+  display:flex;align-items:center;padding:0 10px;gap:5px;
+  font-size:10px;font-weight:600;color:var(--dim);}
+.mcell.has{color:var(--txt);}
+.mdot{width:4px;height:4px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,#3B82F6,#FB923C);}
+.lanes{flex:1;display:flex;flex-direction:column;min-width:calc(12 * var(--mw));min-height:0;}
+.lane{flex:1;border-bottom:1px solid var(--bd);overflow:hidden;min-height:0;display:flex;flex-direction:column;}
+.lane:last-child{border-bottom:none;}
+.sublane{flex:1;position:relative;overflow:hidden;min-height:0;}
+.sublane+.sublane{border-top:1px solid rgba(255,255,255,.07);}
+.sublane-bar{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;align-items:center;
+  justify-content:center;z-index:10;pointer-events:none;border-right:1px solid rgba(255,255,255,.08);
+  background:rgba(var(--rgb),.14);}
+.sublane-bar span{writing-mode:vertical-rl;font-size:7px;font-weight:900;letter-spacing:.4px;color:var(--bc);}
+.sublane{background:rgba(var(--rgb),.03);}
+.mline{position:absolute;top:0;bottom:0;width:1px;background:var(--bd);pointer-events:none;}
+
+/* ═══ CHIP ═══ */
+.chip{position:absolute;height:22px;display:flex;align-items:center;gap:3px;
+  padding:0 6px 0 4px;border-radius:5px;border:1px solid rgba(var(--rgb),.25);
+  text-decoration:none;cursor:pointer;z-index:2;white-space:nowrap;overflow:hidden;
+  transition:transform .14s,box-shadow .14s,border-color .14s;
+  background:rgba(var(--rgb),.12);border-left:2px solid var(--bc);}
+.chip:hover{transform:translateY(-2px);z-index:60;
+  box-shadow:0 4px 14px rgba(var(--rgb),.4);border-color:rgba(var(--rgb),.6);}
+.chip-brand{font-size:8px;font-weight:800;padding:0 3px;border-radius:3px;flex-shrink:0;
+  background:rgba(255,255,255,.1);color:var(--dim2);}
+.chip-date{font-size:9px;color:var(--dim);font-weight:600;flex-shrink:0;}
+.chip-city{font-size:9px;font-weight:700;flex-shrink:0;color:var(--bc);}
+.chip-title{font-size:10px;font-weight:600;color:var(--txt);
+  overflow:hidden;text-overflow:ellipsis;flex:1;min-width:0;}
+
+/* ═══ CLUSTER ═══ */
+.cluster{position:absolute;height:22px;display:flex;align-items:center;gap:4px;
+  padding:0 7px;border-radius:5px;cursor:pointer;z-index:3;white-space:nowrap;
+  transition:transform .14s,box-shadow .14s;
+  background:linear-gradient(135deg,rgba(var(--rgb),.2),rgba(var(--rgb),.1));
+  border:1px solid rgba(var(--rgb),.45);}
+.cluster:hover{transform:translateY(-2px);}
+.cl-date{font-size:9px;font-weight:700;flex-shrink:0;color:var(--bc);}
+.cl-city{font-size:9px;font-weight:700;flex-shrink:0;color:var(--bc);}
+.cl-cnt{font-size:9px;font-weight:800;padding:1px 5px;border-radius:8px;flex-shrink:0;
+  background:rgba(var(--rgb),.28);color:var(--bc);}
+
+/* ═══ TOOLTIP ═══ */
+#tt{position:fixed;z-index:9999;width:268px;padding:12px 14px;
+  background:var(--card);border-radius:10px;border:1px solid var(--bd);
+  box-shadow:0 16px 48px rgba(0,0,0,.65);pointer-events:none;
+  opacity:0;transform:translateY(4px);transition:opacity .13s,transform .13s;}
+#tt.show{opacity:1;transform:translateY(0);pointer-events:auto;}
+#tt::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;border-radius:10px 10px 0 0;
+  background:linear-gradient(90deg,var(--bc),var(--bc2,var(--bc)));}
+.tt-hdr{display:flex;align-items:center;gap:6px;margin-bottom:4px;}
+.tt-brand-tag{font-size:9px;font-weight:800;padding:1px 6px;border-radius:4px;
+  background:rgba(var(--rgb),.18);color:var(--bc);}
+.tt-dt{font-size:9px;color:var(--dim);}
+.tt-ttl{font-size:13px;font-weight:700;line-height:1.38;margin-bottom:5px;}
+.tt-city{font-size:11px;font-weight:700;margin-bottom:5px;color:var(--bc);}
+.tt-sum{font-size:11px;color:var(--dim2);line-height:1.5;margin-bottom:9px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.tt-link{display:block;text-align:center;text-decoration:none;padding:6px 0;
+  border-radius:7px;font-size:12px;font-weight:700;transition:opacity .12s;
+  background:rgba(var(--rgb),.18);color:var(--bc);}
+.tt-link:hover{opacity:.8;}
+
+/* ═══ CLUSTER PANEL ═══ */
+#clp{position:fixed;z-index:9998;width:296px;background:var(--card);border-radius:11px;
+  border:1px solid var(--bd);box-shadow:0 20px 60px rgba(0,0,0,.7);display:none;overflow:hidden;}
+#clp.show{display:block;}
+#clp::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--bc),var(--bc2,var(--bc)));}
+.clp-hdr{padding:9px 13px 8px;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:6px;}
+.clp-ttl{font-size:11px;font-weight:700;flex:1;color:var(--txt);}
+.clp-x{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.08);
+  border:none;color:var(--dim);font-size:11px;cursor:pointer;display:flex;
+  align-items:center;justify-content:center;}
+.clp-x:hover{background:rgba(255,255,255,.14);}
+.clp-list{max-height:300px;overflow-y:auto;
+  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.07) transparent;}
+.clp-item{display:flex;align-items:center;gap:7px;padding:8px 13px;
+  border-bottom:1px solid var(--bd);cursor:pointer;text-decoration:none;transition:background .1s;}
+.clp-item:last-child{border-bottom:none;}
+.clp-item:hover{background:rgba(255,255,255,.04);}
+.clp-n{font-size:9px;font-weight:800;width:14px;text-align:center;flex-shrink:0;color:var(--dim2);}
+.clp-body{min-width:0;}
+.clp-meta{font-size:9px;color:var(--dim);margin-bottom:2px;}
+.clp-name{font-size:11px;font-weight:600;color:var(--txt);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.clp-brand-tag{font-size:8px;font-weight:800;padding:1px 4px;border-radius:3px;margin-left:4px;
+  background:rgba(var(--brgb),.2);color:var(--brc);}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js">
+/* ═══ THEME AND EXPORT (V2 ADDITIONS) ═══ */
+document.getElementById('themeBtn').addEventListener('click', (e) => {
+  const isLight = document.body.classList.toggle('theme-light');
+  e.target.textContent = isLight ? '🌙 深色' : '☀️ 浅色';
+});
+
+document.getElementById('exportBtn').addEventListener('click', async () => {
+  const btn = document.getElementById('exportBtn');
+  const orgText = btn.textContent;
+  btn.textContent = '⏳ 生成中...';
+  btn.disabled = true;
+
+  const tl = document.getElementById('tl');
+  const wm = document.getElementById('watermarkBadge');
+  
+  // Show watermark
+  wm.style.display = 'flex';
+  
+  try {
+    const canvas = await html2canvas(tl, {
+      scale: 2, // High-res retina
+      useCORS: true,
+      backgroundColor: document.body.classList.contains('theme-light') ? '#F9FAFB' : '#1C2438',
+      windowWidth: tl.scrollWidth,
+      windowHeight: tl.scrollHeight
+    });
+    
+    // Draw watermark onto canvas natively
+    const ctx = canvas.getContext('2d');
+    ctx.save();
+    const pad = 30;
+    ctx.font = 'bold 28px "PingFang SC", sans-serif';
+    ctx.fillStyle = document.body.classList.contains('theme-light') ? 'rgba(0,0,0,0.6)' : 'rgba(255,255,255,0.6)';
+    ctx.textAlign = 'right';
+    ctx.fillText('Mirobiz Lab · 社交媒体战略洞察', canvas.width - pad, canvas.height - pad);
+    ctx.restore();
+
+    canvas.toBlob(blob => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `社交媒体泳道蓝图-${new Date().getFullYear()}.png`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+    }, 'image/png');
+  } catch (err) {
+    console.error('Export failed', err);
+    alert('导出长图失败，请在控制台查看详情。');
+  } finally {
+    wm.style.display = 'none';
+    btn.textContent = orgText;
+    btn.disabled = false;
+  }
+});
+
+</script>
+<style>
+/* ☀️ Light Theme Support */
+body.theme-light {
+  --bg:#F7F7F8; --surf:#FFFFFF; --card:#F9FAFB; --bd:rgba(0,0,0,.08);
+  --txt:#111827; --dim:#6B7280; --dim2:#4B5563;
+}
+/* 📱 Mobile Adapters */
+@media (max-width: 768px) {
+  /* Controls down to bottom */
+  .nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 14px));
+    height: auto;
+    z-index: 100;
+    border-top: 1px solid var(--bd);
+    border-bottom: none;
+    overflow-x: auto;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  }
+  .swim { padding-bottom: 60px; /* space for bottom nav */ }
+  .topbar { overflow-x: auto; }
+  .topbar-right { margin-left: auto; }
+  /* Enlarge touch targets */
+  .chip { height: 28px; font-size: 11px; }
+  .cluster { height: 28px; }
+  .mbtn { padding: 4px 12px; font-size: 12px; }
+  /* Hide the nav label on mobile to save space */
+  .nav-lbl { display: none; }
+}
+/* 📸 Watermark Badge */
+#watermarkBadge {
+  position: absolute; right: 14px; bottom: 20px;
+  pointer-events: none; z-index: 90;
+  background: rgba(255,255,255,0.85); box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.1); backdrop-filter: blur(4px);
+  padding: 8px 14px; border-radius: 8px;
+  display: none; align-items: center; gap: 8px; color: #111;
+  font-family: "Avenir Next", "PingFang SC", sans-serif;
+  transition: all 0.3s;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ Title Bar ═══ -->
+<div class="topbar">
+  <h1 id="pageTitle">国内云企业产品内容洞察</h1>
+  <div class="topbar-right">
+    <div class="brand-toggles" id="brandToggles"></div>
+    <button class="load-btn" style="color:var(--txt);border-color:var(--bd);" id="themeBtn">☀️ 浅色</button>
+    <button class="load-btn" style="color:#10B981;border-color:rgba(16,185,129,0.3);" id="exportBtn">📸 导出长图</button>
+    <div class="total-badge" id="totalBadge" style="display:none"></div>
+    <button class="load-btn" id="loadBtn">＋ 加载数据</button>
+    <input type="file" id="fileInput" multiple accept=".json" style="display:none">
+  </div>
+</div>
+
+<!-- ═══ Info Bar ═══ -->
+<div class="infobar" id="infobar" style="display:none"></div>
+
+<!-- ═══ Month Nav ═══ -->
+<div class="nav" id="navBar" style="display:none">
+  <span class="nav-lbl">月份跳转 →</span>
+</div>
+
+<!-- ═══ Swimlane ═══ -->
+<div class="swim" id="swimContainer" style="display:none">
+  <div class="labels" id="laneLabels">
+    <div class="lbl-corner"></div>
+  </div>
+  <div class="tl" id="tl">
+    <div class="mrow" id="mrow"></div>
+    <div class="lanes" id="lanes"></div>
+  </div>
+</div>
+
+<!-- Watermark Badge -->
+<div id="watermarkBadge">
+  <div style="font-weight:800;font-size:14px;margin-right:6px">Mirobiz Lab</div>
+  <span style="font-size:11px;opacity:0.6;border-left:1px solid #ccc;padding-left:8px">社交媒体战略泳道图</span>
+</div>
+
+<!-- ═══ Empty State ═══ -->
+<div class="empty-state" id="emptyState">
+  <div style="font-size:48px">📊</div>
+  <h2>国内云企业产品内容洞察</h2>
+  <p>加载一个或多个 JSON 数据文件，即可开始对比不同账号/品牌的内容分布。</p>
+  <p style="font-size:11px;color:var(--dim)">支持格式：标准 Swimlane JSON（可通过 convert_to_swimlane.py 转换生成）</p>
+  <button class="empty-load-btn" id="emptyLoadBtn">选择 JSON 文件</button>
+</div>
+
+<div id="tt"></div>
+<div id="clp">
+  <div class="clp-hdr"><span class="clp-ttl" id="clp-ttl"></span><button class="clp-x" id="clpX">✕</button></div>
+  <div class="clp-list" id="clp-list"></div>
+</div>
+
+<script>
+/* ═══ CONFIG ═══ */
+const MW = 300; // month width px
+const CW = 210; // chip width px
+const RH = 26;  // row height px
+const PAD = 3;  // top padding px
+const BAR_W = 22; // sublane brand-bar width
+
+// Color palette — auto-assigned to brands without explicit colors
+const PALETTE = [
+  {p:'#2563EB',s:'#3B82F6'}, {p:'#EA580C',s:'#FB923C'},
+  {p:'#7C3AED',s:'#8B5CF6'}, {p:'#0D9488',s:'#14B8A6'},
+  {p:'#BE185D',s:'#EC4899'}, {p:'#0369A1',s:'#38BDF8'},
+  {p:'#15803D',s:'#4ADE80'}, {p:'#B45309',s:'#FCD34D'},
+];
+
+// Category colors for lane labels
+const CAT_PALETTE = [
+  {p:'#2563EB',s:'#3B82F6'}, {p:'#7C3AED',s:'#8B5CF6'},
+  {p:'#0D9488',s:'#14B8A6'}, {p:'#EA580C',s:'#FB923C'},
+  {p:'#BE185D',s:'#EC4899'}, {p:'#0369A1',s:'#38BDF8'},
+];
+
+/* ═══ STATE ═══ */
+const brands = new Map();  // id -> { meta, items, active, colorIdx }
+let categories = [];       // [{id, name, icon, colorIdx}]
+let paletteIdx = 0;
+
+/* ═══ UTILS ═══ */
+const esc = s => String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+const norm = c => (!c||c==="未知/全国/线上"||c==="unknown")?"全国/线上":c;
+
+function hexToRgb(hex) {
+  const r=parseInt(hex.slice(1,3),16), g=parseInt(hex.slice(3,5),16), b=parseInt(hex.slice(5,7),16);
+  return `${r},${g},${b}`;
+}
+
+function setBrandVars(el, color) {
+  el.style.setProperty('--bc', color.s);
+  el.style.setProperty('--rgb', hexToRgb(color.p));
+}
+
+function setCatVars(el, color) {
+  el.style.setProperty('--cc', color.p);
+  el.style.setProperty('--cc2', color.s);
+}
+
+function xFor(dateStr) {
+  const d = new Date(dateStr);
+  const m = d.getMonth();
+  const day = d.getDate() - 1;
+  return m * MW + (day / new Date(d.getFullYear(), m+1, 0).getDate()) * MW + 4;
+}
+
+/* ═══ DATA LOADING ═══ */
+function loadFiles(files) {
+  const promises = Array.from(files).map(f => f.text().then(t => ({name: f.name, data: JSON.parse(t)})));
+  Promise.all(promises).then(results => {
+    results.forEach(({name, data}) => registerBrand(data));
+    rebuildAll();
+  }).catch(err => alert('文件解析失败：' + err.message));
+}
+
+function registerBrand(data) {
+  const meta = data.meta || {};
+  const id = meta.id || ('brand_' + brands.size);
+  if (brands.has(id)) {
+    // Merge items
+    const existing = brands.get(id);
+    existing.items = [...existing.items, ...(data.items || [])];
+    return;
+  }
+  const colorIdx = paletteIdx++ % PALETTE.length;
+  const color = meta.color
+    ? {p: meta.color, s: meta.colorSecondary || meta.color}
+    : PALETTE[colorIdx];
+
+  brands.set(id, {meta, items: data.items || [], active: true, color, colorIdx});
+
+  // Discover categories
+  const catDefs = data.categories || [];
+  const catMap = {};
+  catDefs.forEach(c => { catMap[c.name || c.id] = c; });
+
+  (data.items || []).forEach(item => {
+    const catName = item.category || item['文章分类'] || '其他';
+    if (!categories.find(c => c.name === catName)) {
+      const def = catMap[catName] || {};
+      const cidx = categories.length % CAT_PALETTE.length;
+      categories.push({
+        id: def.id || 'cat_' + categories.length,
+        name: catName,
+        icon: def.icon || '📋',
+        colorIdx: cidx,
+      });
+    }
+  });
+}
+
+/* ═══ NORMALIZE ITEM ═══ */
+function normalizeItem(item) {
+  return {
+    title:    item.title    || item['标题']    || '',
+    summary:  item.summary  || item['摘要']    || '',
+    category: item.category || item['文章分类']|| '其他',
+    city:     item.city     || item['举办城市']|| '',
+    date:     item.date     || item['发布时间']|| '',
+    url:      item.url      || item['链接']    || '#',
+    reads:    item.reads    || item['阅读']    || 0,
+    likes:    item.likes    || item['点赞']    || 0,
+    text:     item.text     || '',  // Twitter text field
+  };
+}
+
+/* ═══ REBUILD ALL ═══ */
+function rebuildAll() {
+  if (brands.size === 0) {
+    document.getElementById('emptyState').style.display = 'flex';
+    document.getElementById('infobar').style.display = 'none';
+    document.getElementById('navBar').style.display = 'none';
+    document.getElementById('swimContainer').style.display = 'none';
+    return;
+  }
+  
+  // ★ 强制进行层级降序排序：确保 Tier 1 -> Tier 2 -> Tier 3 从上往下展示
+  categories.sort((a, b) => {
+    const getWeight = name => {
+      if (!name) return 99;
+      if (name.includes('Tier 1') || name.includes('一层') || name.includes('旗舰')) return 1;
+      if (name.includes('Tier 2') || name.includes('二层') || name.includes('战役')) return 2;
+      if (name.includes('Tier 3') || name.includes('三层') || name.includes('生态')) return 3;
+      return 99;
+    };
+    return getWeight(a.name) - getWeight(b.name) || a.name.localeCompare(b.name);
+  });
+
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('infobar').style.display = 'flex';
+  document.getElementById('navBar').style.display = 'flex';
+  document.getElementById('swimContainer').style.display = 'flex';
+
+  const names = [...brands.values()].filter(b=>b.active).map(b => b.meta.name || b.meta.id).join(' vs ');
+  document.getElementById('pageTitle').textContent = names || '泳道对比看板';
+
+  buildToggles();
+  buildNavMonths();
+  buildInfoBar();
+  buildLaneLabels();
+  buildLanes();
+  updateTotalBadge();
+}
+
+/* ═══ TOGGLES ═══ */
+function buildToggles() {
+  const container = document.getElementById('brandToggles');
+  container.innerHTML = '';
+  brands.forEach((brand, id) => {
+    const btn = document.createElement('div');
+    btn.className = 'btog' + (brand.active ? ' on' : '');
+    btn.dataset.id = id;
+    setBrandVars(btn, brand.color);
+    btn.innerHTML = `<div class="tog-dot"></div>${brand.meta.icon||''} ${brand.meta.name||id}`;
+    btn.addEventListener('click', () => toggleBrand(id));
+    container.appendChild(btn);
+  });
+  document.getElementById('totalBadge').style.display = brands.size > 0 ? '' : 'none';
+}
+
+function toggleBrand(id) {
+  const brand = brands.get(id);
+  if (!brand) return;
+  const activeCount = [...brands.values()].filter(b => b.active).length;
+  if (brand.active && activeCount <= 1) return;
+  brand.active = !brand.active;
+  const btn = document.querySelector(`.btog[data-id="${id}"]`);
+  if (btn) btn.classList.toggle('on', brand.active);
+  buildInfoBar();
+  buildLaneLabels();
+  buildLanes();
+  updateTotalBadge();
+}
+
+function updateTotalBadge() {
+  let total = 0;
+  brands.forEach(b => { if (b.active) total += b.items.length; });
+  document.getElementById('totalBadge').textContent = `共 ${total} 条`;
+}
+
+/* ═══ MONTH NAV ═══ */
+function buildNavMonths() {
+  const nav = document.getElementById('navBar');
+  // Remove existing buttons (keep first span)
+  Array.from(nav.querySelectorAll('.mbtn')).forEach(b => b.remove());
+  ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'].forEach((m, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'mbtn' + (i === 0 ? ' active' : '');
+    btn.dataset.m = i;
+    btn.textContent = m;
+    btn.addEventListener('click', ev => {
+      ev.stopPropagation();
+      document.getElementById('tl').scrollTo({left: i * MW, behavior:'smooth'});
+      document.querySelectorAll('.mbtn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+    nav.appendChild(btn);
+  });
+
+  const tl = document.getElementById('tl');
+  tl.addEventListener('scroll', () => {
+    const m = Math.min(11, Math.max(0, Math.round(tl.scrollLeft / MW)));
+    document.querySelectorAll('.mbtn').forEach((b, i) => b.classList.toggle('active', i === m));
+  });
+
+  // Month row cells
+  const mrow = document.getElementById('mrow');
+  mrow.innerHTML = '';
+  for (let i = 0; i < 12; i++) {
+    const c = document.createElement('div');
+    c.className = 'mcell'; c.id = 'mc'+i; c.style.width = MW+'px';
+    c.innerHTML = '<div class="mdot"></div>2025年' + (i+1) + '月';
+    mrow.appendChild(c);
+  }
+}
+
+/* ═══ INFO BAR ═══ */
+function buildInfoBar() {
+  const bar = document.getElementById('infobar');
+  bar.innerHTML = '';
+  const activeBrands = [...brands.entries()].filter(([,b]) => b.active);
+
+  categories.forEach((cat, cidx) => {
+    const catColor = CAT_PALETTE[cat.colorIdx];
+    const card = document.createElement('div');
+    card.className = 'icard';
+    setCatVars(card, catColor);
+
+    let statsHtml = '', tagsHtml = '';
+    activeBrands.forEach(([id, brand]) => {
+      const catItems = brand.items.filter(item => (item.category||item['文章分类']) === cat.name);
+      const n = catItems.length;
+      if (n === 0) return;
+      setBrandVars(card, brand.color); // last brand wins for card color — overridden per stat below
+      statsHtml += `<div class="brand-stat" style="--bc:${brand.color.s};--rgb:${hexToRgb(brand.color.p)}">
+        <span class="bs-logo">${brand.meta.icon||''} ${(brand.meta.name||id).slice(0,4)}</span>
+        <span class="bs-num">${n}</span><span class="bs-unit">条</span>
+      </div>`;
+      // Top cities or tags
+      const cityCount = {};
+      catItems.forEach(it => {
+        const c = norm(it.city || it['举办城市']||'');
+        if (c !== '全国/线上') cityCount[c] = (cityCount[c]||0)+1;
+      });
+      const topCities = Object.entries(cityCount).sort((a,b)=>b[1]-a[1]).slice(0,3)
+        .map(([c,n]) => `📍${c}×${n}`);
+      if (topCities.length) {
+        tagsHtml += topCities.map(t =>
+          `<span class="itag" style="--bc:${brand.color.s};--rgb:${hexToRgb(brand.color.p)}">${esc(t)}</span>`
+        ).join('');
+      }
+    });
+
+    card.innerHTML = `
+      <div class="icard-icon">${cat.icon}</div>
+      <div class="icard-body">
+        <div class="icard-title">${esc(cat.name)}</div>
+        <div class="icard-stats">${statsHtml}</div>
+        <div class="itags">${tagsHtml}</div>
+      </div>`;
+    bar.appendChild(card);
+  });
+}
+
+/* ═══ LANE LABELS ═══ */
+function buildLaneLabels() {
+  const labels = document.getElementById('laneLabels');
+  // Remove all except corner
+  Array.from(labels.children).slice(1).forEach(el => el.remove());
+
+  const activeBrands = [...brands.entries()].filter(([,b]) => b.active);
+
+  categories.forEach((cat, cidx) => {
+    const catColor = CAT_PALETTE[cat.colorIdx];
+    const lbl = document.createElement('div');
+    lbl.className = 'lbl';
+    setCatVars(lbl, catColor);
+
+    let total = 0;
+    let pillsHtml = '';
+    activeBrands.forEach(([id, brand]) => {
+      const n = brand.items.filter(it => (it.category||it['文章分类']) === cat.name).length;
+      total += n;
+      if (activeBrands.length > 1) {
+        pillsHtml += `<div class="lbl-brand-pill" style="--bc:${brand.color.s};--rgb:${hexToRgb(brand.color.p)}">
+          ${brand.meta.icon||''} ${(brand.meta.name||id).slice(0,3)} ${n}条</div>`;
+      }
+    });
+
+    lbl.innerHTML = `<div class="lbl-bar"></div>
+      <div class="lbl-name">${esc(cat.name)}</div>
+      <div class="lbl-cnt">${total}条</div>
+      <div class="lbl-brands">${pillsHtml}</div>`;
+    labels.appendChild(lbl);
+  });
+}
+
+/* ═══ LANES ═══ */
+function buildLanes() {
+  const lanesEl = document.getElementById('lanes');
+  lanesEl.innerHTML = '';
+  lanesEl.style.minWidth = `calc(12 * ${MW}px)`;
+
+  // Update month has-data
+  const allActive = [...brands.values()].filter(b => b.active).flatMap(b => b.items);
+  const hasMo = new Set(allActive.map(d => new Date(d.date||d['发布时间']||'').getMonth()).filter(m => !isNaN(m)));
+  for (let i = 0; i < 12; i++) {
+    const el = document.getElementById('mc'+i);
+    if (el) el.classList.toggle('has', hasMo.has(i));
+  }
+
+  const activeBrands = [...brands.entries()].filter(([,b]) => b.active);
+
+  categories.forEach((cat, cidx) => {
+    const lane = document.createElement('div');
+    lane.className = 'lane';
+    lane.id = 'lane_' + cat.id;
+    lanesEl.appendChild(lane);
+
+    activeBrands.forEach(([id, brand]) => {
+      const catItems = brand.items
+        .filter(it => (it.category||it['文章分类']) === cat.name)
+        .map(it => ({ ...normalizeItem(it), _brand: id, _color: brand.color }));
+
+      const sl = document.createElement('div');
+      sl.className = 'sublane';
+      setBrandVars(sl, brand.color);
+
+      const bar = document.createElement('div');
+      bar.className = 'sublane-bar';
+      bar.innerHTML = `<span>${brand.meta.icon||''} ${(brand.meta.name||id).slice(0,4)}</span>`;
+      sl.appendChild(bar);
+
+      for (let i = 0; i <= 12; i++) {
+        const ln = document.createElement('div');
+        ln.className = 'mline';
+        ln.style.left = (i * MW + BAR_W) + 'px';
+        sl.appendChild(ln);
+      }
+
+      lane.appendChild(sl);
+      buildSublane(sl, catItems, brand.color);
+    });
+  });
+}
+
+/* ═══ CLUSTER + CHIP RENDERING ═══ */
+function mkClusters(cards) {
+  const byDate = {};
+  cards.forEach(c => {
+    const key = (c.date||'') + '|' + c._brand;
+    (byDate[key] = byDate[key]||[]).push(c);
+  });
+  const groups = [];
+  Object.entries(byDate).forEach(([, items]) => {
+    if (items.length === 1) {
+      const it = items[0];
+      groups.push({items, x: xFor(it.date), date: it.date, city: norm(it.city), brand: it._brand, color: it._color, single: true});
+    } else {
+      const byCityLocal = {};
+      items.forEach(it => { const c = norm(it.city); (byCityLocal[c]=byCityLocal[c]||[]).push(it); });
+      Object.entries(byCityLocal).forEach(([city, citems]) => {
+        const avgX = citems.reduce((s, it) => s + xFor(it.date), 0) / citems.length;
+        groups.push({items: citems, x: avgX, date: citems[0].date, city, brand: citems[0]._brand, color: citems[0]._color, single: citems.length===1});
+      });
+    }
+  });
+  return groups.sort((a, b) => a.x - b.x);
+}
+
+function stack(groups, maxRows) {
+  const rEnd = [];
+  return groups.map(g => {
+    let row = 0;
+    while (row < maxRows && rEnd[row] !== undefined && rEnd[row] > g.x - 2) row++;
+    if (row >= maxRows) return {...g, row: -1};
+    rEnd[row] = g.x + CW + 5;
+    return {...g, row};
+  });
+}
+
+function buildSublane(sl, cards, color) {
+  const slH = sl.clientHeight || 80;
+  const maxRows = Math.max(1, Math.floor((slH - PAD*2) / RH));
+  const groups = mkClusters(cards);
+  const stacked = stack(groups, maxRows);
+  const overflow = [];
+
+  stacked.forEach(g => {
+    if (g.row === -1) { overflow.push(g); return; }
+    const top = PAD + g.row * RH;
+    const cx = g.x + BAR_W;
+
+    if (g.single) {
+      const it = g.items[0];
+      const chip = document.createElement('a');
+      chip.className = 'chip';
+      setBrandVars(chip, color);
+      chip.href = it.url || '#';
+      chip.target = '_blank'; chip.rel = 'noopener noreferrer';
+      chip.style.cssText += `left:${cx}px;top:${top}px;width:${CW}px;`;
+      const cityS = norm(it.city) === '全国/线上' ? '线上' : (it.city||'').length > 4 ? (it.city||'').slice(0,3)+'…' : (it.city||'线上');
+      const displayText = it.title || it.text || '';
+      chip.innerHTML =
+        `<span class="chip-date">${esc((it.date||'').slice(5))}</span>` +
+        `<span class="chip-city">📍${esc(cityS)}</span>` +
+        `<span class="chip-title">${esc(displayText)}</span>`;
+      chip.addEventListener('mouseenter', ev => showTT(ev, it, color));
+      chip.addEventListener('mousemove', moveTT);
+      chip.addEventListener('mouseleave', hideTT);
+      sl.appendChild(chip);
+    } else {
+      const cl = document.createElement('div');
+      cl.className = 'cluster';
+      setBrandVars(cl, color);
+      cl.style.cssText += `left:${cx}px;top:${top}px;width:${CW}px;`;
+      const cityS = g.city === '全国/线上' ? '多篇' : g.city.length > 4 ? g.city.slice(0,3)+'…' : g.city;
+      cl.innerHTML =
+        `<span class="cl-date">${esc((g.date||'').slice(5))}</span>` +
+        `<span class="cl-city">📍${esc(cityS)}</span>` +
+        `<span class="cl-cnt">${g.items.length}条</span>`;
+      cl.addEventListener('click', ev => { ev.stopPropagation(); showClp(ev, g, color); });
+      sl.appendChild(cl);
+    }
+  });
+
+  if (overflow.length) {
+    const bk = {};
+    overflow.forEach(g => { const k = Math.round(g.x/40)*40; (bk[k]=bk[k]||[]).push(...g.items); });
+    Object.entries(bk).forEach(([x, items]) => {
+      const p = document.createElement('div');
+      p.className = 'cluster';
+      setBrandVars(p, color);
+      p.style.cssText += `left:${parseInt(x)+BAR_W}px;bottom:4px;height:18px;padding:0 6px;font-size:9px;`;
+      p.textContent = '+' + items.length;
+      p.addEventListener('click', ev => { ev.stopPropagation(); showClp(ev, {items, date: items[0].date, city:'更多', color}, color); });
+      sl.appendChild(p);
+    });
+  }
+}
+
+/* ═══ TOOLTIP ═══ */
+const tt = document.getElementById('tt');
+let ttOn = false;
+function showTT(ev, it, color) {
+  ttOn = true;
+  const brand = brands.get(it._brand);
+  const brandName = brand ? (brand.meta.icon||'') + ' ' + (brand.meta.name||it._brand) : '';
+  tt.style.setProperty('--bc', color.s);
+  tt.style.setProperty('--rgb', hexToRgb(color.p));
+  const city = norm(it.city);
+  const displayText = it.title || it.text || '';
+  const summary = it.summary || (it.text && it.text !== displayText ? it.text.slice(0,200) : '');
+  tt.innerHTML =
+    `<div class="tt-hdr"><span class="tt-brand-tag">${esc(brandName)}</span><span class="tt-dt">${esc(it.date)}</span></div>` +
+    `<div class="tt-ttl">${esc(displayText)}</div>` +
+    (city !== '全国/线上' ? `<div class="tt-city">📍 ${esc(city)}</div>` : '') +
+    (summary ? `<div class="tt-sum">${esc(summary)}</div>` : '') +
+    `<a class="tt-link" href="${esc(it.url||'#')}" target="_blank" rel="noopener">阅读原文 →</a>`;
+  tt.classList.add('show');
+  posTT(ev);
+}
+function moveTT(ev) { if (ttOn) posTT(ev); }
+function posTT(ev) {
+  const isMobile = window.innerWidth <= 768;
+  const mx = ev.clientX, my = ev.clientY;
+  const ttW = tt.offsetWidth || 272;
+  const ttH = tt.offsetHeight || 160;
+  let tx, ty;
+  if (isMobile) {
+    tx = Math.max(8, Math.min(mx - ttW / 2, window.innerWidth - ttW - 8));
+    // Smart occlusion: if touch in lower half, pop tooltip above finger
+    ty = my > window.innerHeight / 2 ? my - ttH - 24 : my + 24;
+  } else {
+    tx = mx + 14;
+    if (tx + ttW > window.innerWidth) tx = mx - ttW - 14;
+    ty = my - 8;
+    if (ty + ttH > window.innerHeight) ty = window.innerHeight - ttH - 6;
+  }
+  tt.style.left = tx + 'px';
+  tt.style.top = ty + 'px';
+}
+function hideTT() { ttOn = false; tt.classList.remove('show'); }
+
+/* ═══ CLUSTER PANEL ═══ */
+const clp = document.getElementById('clp');
+document.getElementById('clpX').addEventListener('click', () => clp.classList.remove('show'));
+function showClp(ev, g, color) {
+  hideTT();
+  clp.style.setProperty('--bc', color.s);
+  clp.style.setProperty('--rgb', hexToRgb(color.p));
+  document.getElementById('clp-ttl').textContent =
+    (g.date||'').slice(5) + '  📍' + g.city + '  共' + g.items.length + '条';
+  document.getElementById('clp-list').innerHTML = g.items.map((it, i) => {
+    const brand = brands.get(it._brand);
+    const bName = brand ? (brand.meta.name||it._brand) : '';
+    const bColor = brand ? brand.color.s : color.s;
+    const bRgb = brand ? hexToRgb(brand.color.p) : hexToRgb(color.p);
+    const displayText = it.title || it.text || '';
+    return `<a class="clp-item" href="${esc(it.url||'#')}" target="_blank" rel="noopener noreferrer">
+      <span class="clp-n">${i+1}</span>
+      <span class="clp-body">
+        <div class="clp-meta">${esc(it.date)} &nbsp;📍${esc(norm(it.city))}
+          <span class="clp-brand-tag" style="--brc:${bColor};--brgb:${bRgb}">${esc(bName)}</span>
+        </div>
+        <div class="clp-name">${esc(displayText)}</div>
+      </span></a>`;
+  }).join('');
+  const x=ev.clientX+8, y=ev.clientY+8;
+  clp.style.left = Math.min(x, window.innerWidth-304) + 'px';
+  clp.style.top  = Math.max(4, Math.min(y, window.innerHeight-340)) + 'px';
+  clp.classList.add('show');
+}
+document.addEventListener('click', ev => {
+  if (!clp.contains(ev.target)) clp.classList.remove('show');
+  hideTT();
+});
+
+/* ═══ RESIZE OBSERVER ═══ */
+const ro = new ResizeObserver(() => buildLanes());
+// Observe lanes container when visible
+function maybeObserve() {
+  const lanesEl = document.getElementById('lanes');
+  if (lanesEl && lanesEl.children.length > 0) ro.observe(lanesEl.children[0]);
+}
+
+/* ═══ FILE INPUT ═══ */
+const fileInput = document.getElementById('fileInput');
+document.getElementById('loadBtn').addEventListener('click', () => fileInput.click());
+document.getElementById('emptyLoadBtn').addEventListener('click', () => fileInput.click());
+fileInput.addEventListener('change', () => {
+  if (fileInput.files.length) loadFiles(fileInput.files);
+  fileInput.value = '';
+});
+
+// Drag & drop
+document.addEventListener('dragover', ev => ev.preventDefault());
+document.addEventListener('drop', ev => {
+  ev.preventDefault();
+  const files = Array.from(ev.dataTransfer.files).filter(f => f.name.endsWith('.json'));
+  if (files.length) loadFiles(files);
+});
+
+// URL param loading: ?data=url1,url2
+const urlParams = new URLSearchParams(location.search);
+const dataUrls = urlParams.get('data');
+const defaultDataUrls = [
+  '../../data/ali.json',
+  '../../data/vol.json',
+  '../../data/huaweikunling.json',
+  '../../data/huaweizhengqi.json'
+];
+const urlsToLoad = dataUrls ? dataUrls.split(',') : defaultDataUrls;
+Promise.all(urlsToLoad.map(url => fetch(url).then(r => r.json())))
+  .then(datasets => { datasets.forEach(registerBrand); rebuildAll(); })
+  .catch(err => console.error('URL load failed:', err));
+
+/* ═══ THEME AND EXPORT (V2 ADDITIONS) ═══ */
+document.getElementById('themeBtn').addEventListener('click', (e) => {
+  const isLight = document.body.classList.toggle('theme-light');
+  e.target.textContent = isLight ? '🌙 深色' : '☀️ 浅色';
+});
+
+document.getElementById('exportBtn').addEventListener('click', async () => {
+  const btn = document.getElementById('exportBtn');
+  const orgText = btn.textContent;
+  btn.textContent = '⏳ 生成中...';
+  btn.disabled = true;
+
+  const tl = document.getElementById('tl');
+  const wm = document.getElementById('watermarkBadge');
+  
+  // Show watermark
+  wm.style.display = 'flex';
+  
+  try {
+    const canvas = await html2canvas(tl, {
+      scale: 2, // High-res retina
+      useCORS: true,
+      backgroundColor: document.body.classList.contains('theme-light') ? '#F9FAFB' : '#1C2438',
+      windowWidth: tl.scrollWidth,
+      windowHeight: tl.scrollHeight
+    });
+    
+    // Draw watermark onto canvas natively
+    const ctx = canvas.getContext('2d');
+    ctx.save();
+    const pad = 30;
+    ctx.font = 'bold 28px "PingFang SC", sans-serif';
+    ctx.fillStyle = document.body.classList.contains('theme-light') ? 'rgba(0,0,0,0.6)' : 'rgba(255,255,255,0.6)';
+    ctx.textAlign = 'right';
+    ctx.fillText('Mirobiz Lab · 社交媒体战略洞察', canvas.width - pad, canvas.height - pad);
+    ctx.restore();
+
+    canvas.toBlob(blob => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `社交媒体泳道蓝图-${new Date().getFullYear()}.png`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+    }, 'image/png');
+  } catch (err) {
+    console.error('Export failed', err);
+    alert('导出长图失败，请在控制台查看详情。');
+  } finally {
+    wm.style.display = 'none';
+    btn.textContent = orgText;
+    btn.disabled = false;
+  }
+});
+
+</script>
+</body>
+</html>

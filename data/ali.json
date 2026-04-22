@@ -1,0 +1,878 @@
+{
+  "meta": {
+    "id": "ali",
+    "name": "阿里云",
+    "icon": "☁️",
+    "color": "#EA580C",
+    "colorSecondary": "#FB923C"
+  },
+  "categories": [
+    {
+      "id": "🔺 Tier 1: 战略级旗舰峰会",
+      "name": "🔺 Tier 1: 战略级旗舰峰会",
+      "icon": "🔺"
+    },
+    {
+      "id": "🎯 Tier 2: 战役级核心活动与发布",
+      "name": "🎯 Tier 2: 战役级核心活动与发布",
+      "icon": "🎯"
+    },
+    {
+      "id": "🚀 Tier 3: 战术级生态与常态化运营",
+      "name": "🚀 Tier 3: 战术级生态与常态化运营",
+      "icon": "🚀"
+    }
+  ],
+  "items": [
+    {
+      "title": "AI程序员全面上线！聊着天，就把项目开发好了",
+      "summary": "VS Code、JetBrains IDEs均可调用",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-01-08",
+      "url": "https://mp.weixin.qq.com/s/-TS38RwA-_PM_GhuS-InGg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "通义万相上新，登顶！",
+      "summary": "万相2.1能力全面提升",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-01-09",
+      "url": "https://mp.weixin.qq.com/s/fVkN1d0qkbz8Vg7BNBZpTA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "阿里云轻量应用服务器全球上新！",
+      "summary": "标配200Mbps峰值带宽",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-01-13",
+      "url": "https://mp.weixin.qq.com/s/iYjn31cu_S0mBPsyzxb6AQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "算力性能提升20%！阿里云第九代ECS g9i企业级实例全球邀测",
+      "summary": "为AI时代提供普惠高性能算力",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-01-21",
+      "url": "https://mp.weixin.qq.com/s/jNW_3dw84ZCrxE9Vx8JrcA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "视觉理解模型Qwen2.5-VL开源，斩获多榜单冠军！",
+      "summary": "AI智能体能力巨大飞跃",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-01-28",
+      "url": "https://mp.weixin.qq.com/s/67h-HQ9g7sCJ9y3mfuv7Lg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "新年第一弹，Qwen2.5-Max来了！",
+      "summary": "MoE模型最新探索",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-01-29",
+      "url": "https://mp.weixin.qq.com/s/hP-r8h-LliFUPYKbd3lkUQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "3步，0代码！一键部署DeepSeek-V3、DeepSeek-R1",
+      "summary": "零代码高效开发",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-02-03",
+      "url": "https://mp.weixin.qq.com/s/Ly9bseQxhmunlbePphRsnA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "最新全球模型榜单：通义千问Qwen2.5-Max数学及编程能力第一！",
+      "summary": "开工大吉！",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-02-05",
+      "url": "https://mp.weixin.qq.com/s/3N-3fzPL0PvbW0YrOUVvEw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "DeepSeek全尺寸模型上线阿里云百炼！",
+      "summary": "满血版可享各100万免费tokens",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-02-09",
+      "url": "https://mp.weixin.qq.com/s/UgB90HfKlMDfarMugc5F5w",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "一文总览阿里云存储产品年度升级！",
+      "summary": "CPFS全链路性能提升",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-02-11",
+      "url": "https://mp.weixin.qq.com/s/iHNyNvZenR_cEYesNwVf7w",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "在泰国，数据中心+1！",
+      "summary": "加速出海！",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-02-13",
+      "url": "https://mp.weixin.qq.com/s/ZKYX951CeBWmkifB9ZDprA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "DataWorks X DeepSeek : 用AI实现数据开发治理！",
+      "summary": "Data+AI深度融合",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "杭州",
+      "date": "2025-02-17",
+      "url": "https://mp.weixin.qq.com/s/bQXOQgM88-fnhosxTncRxQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Q3财报：阿里云收入增长13%至317.42亿元",
+      "summary": "感谢支持，继续努力",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "杭州",
+      "date": "2025-02-20",
+      "url": "https://mp.weixin.qq.com/s/6ARa2_K0Ky4Ow4h1ssT37g",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "首发！阶跃星辰最新开源多模态模型上线阿里云魔搭",
+      "summary": "超四万个模型已登陆魔搭社区",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-02-21",
+      "url": "https://mp.weixin.qq.com/s/xEGemYyw7DBY5p1K4jKp6w",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "万相，开源！",
+      "summary": "全模态、全尺寸开源",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-02-25",
+      "url": "https://mp.weixin.qq.com/s/VVHT87-XV8YtyD-zEBKpgw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "刷新世界纪录！阿里云登顶全球数据库性能及性价比排行榜",
+      "summary": "打榜成功",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-02-26",
+      "url": "https://mp.weixin.qq.com/s/RtLu028Gl_Ple6HBlw1diw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "MWC阿里云全球峰会，3月5日见！",
+      "summary": "巴塞罗那，我们不见不散",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-02-28",
+      "url": "https://mp.weixin.qq.com/s/iN6rJgUaQN7tHh7S5nDiqQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "更小尺寸、更强性能，QwQ-32B推理模型开源！",
+      "summary": "消费级显卡实现本地部署",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-03-06",
+      "url": "https://mp.weixin.qq.com/s/QUmvkrZLo_TrWdcnbBYQ4Q",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "MWC2025，阿里云来了！",
+      "summary": "加速开拓全球市场",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-03-07",
+      "url": "https://mp.weixin.qq.com/s/H1yTs67Eee8xRnNuS4W_oQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "这场AI开发赛，大家为LVMH“智能导购”写下这些方案",
+      "summary": "AI实训营，共学共享共实践",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-03-24",
+      "url": "https://mp.weixin.qq.com/s/3wO9mq8ij_odZBwNRxCHnw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "全模态模型Qwen2.5-Omni开源，7B尺寸实现全球最强性能",
+      "summary": "「立体」认识世界",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-03-27",
+      "url": "https://mp.weixin.qq.com/s/ih5sDrlKZwt2F-0O4PE5KQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "在浙大，我们一起共建人工智能通识课",
+      "summary": "产学研协同合作共建",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-04-02",
+      "url": "https://mp.weixin.qq.com/s/-sBZ0CZJqTT-xCO5ed2QVw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "上新！通义千问最新模型登陆国际官网",
+      "summary": "2025全新发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-04-08",
+      "url": "https://mp.weixin.qq.com/s/_HcPkHZe3b3FBFfev4u0UQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "AI势能大会，明天见！",
+      "summary": "北京·首创郎园不见不散",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-04-08",
+      "url": "https://mp.weixin.qq.com/s/49evcsaD0dcUoecp0ZA_Wg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "阿里云AI势能大会全览：为AI应用加速",
+      "summary": "AI正在推动各行各业生产变革",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-04-09",
+      "url": "https://mp.weixin.qq.com/s/kpSLSJapjUdY-xAwUgp6CQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "DataWorks X MCP：数据开发治理Agent发布！",
+      "summary": "助力低门槛、高效率数据开发治理",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-04-11",
+      "url": "https://mp.weixin.qq.com/s/I9xLX6_O4a4Q7Dso9S1oDg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "0代码、5分钟，在百炼搭建出企业级MCP Agent",
+      "summary": "全生命周期MCP服务上线",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-04-14",
+      "url": "https://mp.weixin.qq.com/s/oGoLTRMtPZS8Hu1hHPhtWg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "魔搭上线最大MCP中文社区，独家首发支付宝、MiniMax等MCP",
+      "summary": "加速Agent及AI应用创新与落地",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-04-15",
+      "url": "https://mp.weixin.qq.com/s/MTzth48-WEFvO3yA5XkMew",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "通义千问Qwen3，开源！",
+      "summary": "开源8款「混合推理模型」，提供多种模型尺寸",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-04-29",
+      "url": "https://mp.weixin.qq.com/s/UZE5T7iyFqbXS05ReouOzw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "通义灵码全面支持Qwen3，PAI上线Qwen3云上一键部署教程",
+      "summary": "编程智能体上线，支持自主配置MCP工具",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-04-30",
+      "url": "https://mp.weixin.qq.com/s/jraE_k_Aha3ZBD3MJsRpcA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "2025数字中国建设峰会：阿里云+AI深入千行百业",
+      "summary": "AI应用加速落地",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "重庆",
+      "date": "2025-05-01",
+      "url": "https://mp.weixin.qq.com/s/r7cK30_nLvciEFhKDk5J7g",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "通义灵码入职蔚来汽车，AI生成代码30%以上",
+      "summary": "通义灵码“入职”表现实测",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-05-13",
+      "url": "https://mp.weixin.qq.com/s/MjpnWdUyB4iZJbdqxRUPpg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Q4财报：增速18%，新高！",
+      "summary": "感谢支持，继续努力",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "重庆",
+      "date": "2025-05-15",
+      "url": "https://mp.weixin.qq.com/s/lItuHqK9ABKg6KrTC7mhtw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "阿联酋LuluFin与阿里云达成战略合作！",
+      "summary": "云+AI推动智能化金融服务升级",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-05-16",
+      "url": "https://mp.weixin.qq.com/s/Qq0trlLIEahJEUddzUVJ2A",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "阿里云以战略级投入，支持中国企业出海",
+      "summary": "全球云计算一张网",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-05-22",
+      "url": "https://mp.weixin.qq.com/s/O_m9LsrzU4I1NO3NQ6hUgQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "首发！美图影像、盈米且慢等40多款MCP应用上线阿里云百炼",
+      "summary": "超10万开发者已开发30万+智能体",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-05-28",
+      "url": "https://mp.weixin.qq.com/s/BH-BgvBK_YsLsLhk6ek4rw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "AI IDE正式上线！通义灵码开箱即用",
+      "summary": "更懂工程、更懂开发者的编程工具",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-05-30",
+      "url": "https://mp.weixin.qq.com/s/fZHEZDeTza1P1Df8Lqk73A",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "亚太唯一！阿里云Serverless计算产品进入Forrester领导者象限",
+      "summary": "9项测评获取最高分",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-06-10",
+      "url": "https://mp.weixin.qq.com/s/h8JY9UjkZlcnefKY7r44xw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "2025阿里云中企出海峰会·深圳，6月24日见！",
+      "summary": "不见不散",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "深圳",
+      "date": "2025-06-17",
+      "url": "https://mp.weixin.qq.com/s/5goal5YntXbBmgH7OVNopQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "通义千问获信通院最高等级大模型安全认证！",
+      "summary": "",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-06-18",
+      "url": "https://mp.weixin.qq.com/s/9jLvIe9i_8At_DYJZihn-w",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "6月30日北京见！2025魔搭开发者大会亮点抢先看",
+      "summary": "北京海淀，我们不见不散",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "北京",
+      "date": "2025-06-20",
+      "url": "https://mp.weixin.qq.com/s/uN6mIbcq01vSomzcTj7xpw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "训练时间可缩短50%！阿里云推出自动驾驶模型加速框架",
+      "summary": "适用自动驾驶模型、世界模型等",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-06-23",
+      "url": "https://mp.weixin.qq.com/s/9-0WzT5D_5rkuAc5WbmN7g",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "阿里云全力服务生而全球的企业！",
+      "summary": "AI云塑造出海核心竞争力",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "深圳",
+      "date": "2025-06-24",
+      "url": "https://mp.weixin.qq.com/s/yJ99CMEdVjmvY0aE96I9hA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "阿里云百炼X支付宝：「AI打赏」功能上线，Agent变现更灵活",
+      "summary": "一键开通，立即开启AI收",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-06-25",
+      "url": "https://mp.weixin.qq.com/s/RIFsoua9aeYhnSvLX2pi8A",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "数万名开发者、65个话题，2025魔搭开发者大会下周见！",
+      "summary": "6月30日北京见",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "未知/全国/线上",
+      "date": "2025-06-25",
+      "url": "https://mp.weixin.qq.com/s/BinYv9zlFhgJ1LYTth_8PA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "2025阿里云中企出海峰会·北京，7月9日见！",
+      "summary": "不见不散",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-07-01",
+      "url": "https://mp.weixin.qq.com/s/Vo0NKsv-cRqJ-qWNAQWRCw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "马来西亚+菲律宾，新数据中心来了！",
+      "summary": "推动AI能力全球化落地",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-07-02",
+      "url": "https://mp.weixin.qq.com/s/j2O_3n4kBSylRV5OF13EXg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "加码！阿里云将投超4亿元支持国际生态建设",
+      "summary": "加速AI创新落地",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-07-03",
+      "url": "https://mp.weixin.qq.com/s/EDUrrEMty1tevKXYSGb9GQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "加速中企AI出海，阿里云提供全栈能力支持！",
+      "summary": "",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-07-09",
+      "url": "https://mp.weixin.qq.com/s/TxknYQGkAe49VRb-9PL7Bw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "AI云市场，领导者！",
+      "summary": "亚太顶级基础模型供应商",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-07-10",
+      "url": "https://mp.weixin.qq.com/s/5g3SDLV-pidd8OC6W-yNvg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "总台《赢在AI+》年度收官，10强选手全部长在阿里云上",
+      "summary": "为节目与参赛企业提供全栈AI技术支持",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-07-14",
+      "url": "https://mp.weixin.qq.com/s/1lgaGCRIKCY-g8pDiSKOQQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "成都&合肥，阿里云AI势能峰会来了！",
+      "summary": "下周不见不散！",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "成都",
+      "date": "2025-07-16",
+      "url": "https://mp.weixin.qq.com/s/dgOkIQjxADd9oxB9hF2ujQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Qwen3-Coder开源：面向世界的智能编程引擎",
+      "summary": "和Qwen3-Coder一起Coding",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "2025-07-23",
+      "url": "https://mp.weixin.qq.com/s/VdxtVNl0Ftr4DvmDuMpCBQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "定了！立即生效",
+      "summary": "限时五折",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-07-23",
+      "url": "https://mp.weixin.qq.com/s/8cMBL8s2wDwNR54pYTyVRw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "苏美达接入通义千问！智能体落地出海、招投标等业务场景",
+      "summary": "",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "合肥",
+      "date": "2025-07-24",
+      "url": "https://mp.weixin.qq.com/s/NF257aXsO_498CAGSginfw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "三连发！通义千问3重磅更新",
+      "summary": "登顶最强开源模型",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-07-25",
+      "url": "https://mp.weixin.qq.com/s/6W2l2GXyrQzKCM7L8J59BA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "免费，Qwen3-Coder不限量！",
+      "summary": "上通义灵码立即使用",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-07-26",
+      "url": "https://mp.weixin.qq.com/s/V-ZxPxsOBd_ctrt3bNAYsw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "无影AgentBay来了！给AI智能体装上“超级大脑”",
+      "summary": "限时免费领取100小时使用时长",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "上海",
+      "date": "2025-07-29",
+      "url": "https://mp.weixin.qq.com/s/mh9DgjObg8l2_0DCNghVvw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "定了！2025云栖大会9月24-26日杭州见",
+      "summary": "开启通往AGI的未来之旅",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "杭州",
+      "date": "2025-08-05",
+      "url": "https://mp.weixin.qq.com/s/ZYQxTvSj7Kb2-56k82gAbA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "容器管理，连续3年入选「领导者」象限！",
+      "summary": "",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-08-08",
+      "url": "https://mp.weixin.qq.com/s/1RFs5ctxnvEPXeKp0UyRDw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "对话硅基流动袁进辉｜训练需求是泳池，推理需求是一条没有边界的河",
+      "summary": "一位AI Infra创业者的底层判断",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-08-08",
+      "url": "https://mp.weixin.qq.com/s/zW-NjoYLYiBZYXZJInffYQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "用友接入通义灵码后，超37%代码由大模型生成",
+      "summary": "AI Coding助力研发效能提升",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-08-13",
+      "url": "https://mp.weixin.qq.com/s/DfwPtHrKOCqx8pcgdZScdQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "性价比最高提升50%！阿里云企业级云服务器上新",
+      "summary": "即日起可体验公测",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-08-14",
+      "url": "https://mp.weixin.qq.com/s/MKQbzWPCdn4wnaHFZ_wl_A",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "阿里云表格存储全面升级，让AI记得久、找得快、用得上！",
+      "summary": "存储成本降低30%",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-08-18",
+      "url": "https://mp.weixin.qq.com/s/229r8vmwVvbFwp3R8RZRzw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "AI公有云第一，阿里云持续领跑！",
+      "summary": "稳居市场份额第一",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-08-19",
+      "url": "https://mp.weixin.qq.com/s/exiiiF0ArtiA33Z3CPAiqg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "最新剧透！一文看懂2025云栖大会核心亮点",
+      "summary": "9.24-9.26杭州云栖小镇见",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "杭州",
+      "date": "2025-09-04",
+      "url": "https://mp.weixin.qq.com/s/bHqRps9ntEYNIImEE6EM4w",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "重磅官宣 | 2025云栖大会开幕式主论坛议程发布！",
+      "summary": "9月24日-26日不见不散",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "杭州",
+      "date": "2025-09-16",
+      "url": "https://mp.weixin.qq.com/s/B3YrtoqR8pt-bc-9mlZ91A",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "少年云连续三年在联合国教科文组织峰会发言",
+      "summary": "做扎根乡村教育的「科技合伙人」",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-09-19",
+      "url": "https://mp.weixin.qq.com/s/P4DEccrKV-oklwvI7BQw1g",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "倒计时2天！2025云栖大会参展阵容揭晓",
+      "summary": "9.24-9.26杭州云栖小镇见",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "杭州",
+      "date": "2025-09-22",
+      "url": "https://mp.weixin.qq.com/s/ZUEsJVlax5DgBjGjmNS7KA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "2025云栖大会，明天见！",
+      "summary": "精彩抢先看",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "杭州",
+      "date": "2025-09-23",
+      "url": "https://mp.weixin.qq.com/s/v-ekyt7lepAPUfIrjtaxjg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "云栖重磅合集 | 吴泳铭：超级人工智能之路",
+      "summary": "全栈AI技术体系重磅升级",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "杭州",
+      "date": "2025-09-24",
+      "url": "https://mp.weixin.qq.com/s/mVjOthTo9KGtbnt1rCwoNg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "云栖重磅｜热烈欢迎各行各业的朋友们！",
+      "summary": "AI加速落地千行百业",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "未知/全国/线上",
+      "date": "2025-09-25",
+      "url": "https://mp.weixin.qq.com/s/Cw-vm6LypA7uXrlKrWvxnQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "云栖精彩集锦，明年再会！",
+      "summary": "明年见",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "未知/全国/线上",
+      "date": "2025-09-26",
+      "url": "https://mp.weixin.qq.com/s/E0xZgEQQRIKen7cjVoxgQw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "国家发展改革委培训中心（宣传中心）与阿里云共同启动“数智化战略领军人才”培养计划",
+      "summary": "全面提升数智化战略领军人才",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "北京",
+      "date": "2025-09-29",
+      "url": "https://mp.weixin.qq.com/s/mFE91XSzlxMWFvI3X1LRVg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "海尔集团与阿里巴巴达成全面AI合作",
+      "summary": "共研共创，推动AI深入产业",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-10-13",
+      "url": "https://mp.weixin.qq.com/s/URGTsMpSVJHVKyDUXyLR_A",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "深度长文！详解阿里云磐久AL128超节点服务器及互连架构",
+      "summary": "深度解读最火超节点的新架构与新趋势",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "未知/全国/线上",
+      "date": "2025-10-21",
+      "url": "https://mp.weixin.qq.com/s/s_PfaR858NGTck8x07XXhQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "ECS上新！支持自然语言部署、自动运维与一键安全配置",
+      "summary": "1024祝大家写得快，睡得早，发布稳",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-10-24",
+      "url": "https://mp.weixin.qq.com/s/1g3O05VAljStAdnfd2WXuQ",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "最高7000万免费tokens！阿里云双11活动来了",
+      "summary": "大力度折扣抢先看！",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-11-10",
+      "url": "https://mp.weixin.qq.com/s/NzSJpICDDE_zkljgMgAANg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "装机量突破1000万！龙蜥操作系统市占率近50%",
+      "summary": "用户迁移意愿最高的服务器操作系统",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-11-18",
+      "url": "https://mp.weixin.qq.com/s/jc6CiD8xsFEVIehyF1uzrg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "阿里云Q2财报：34%，增速再创新高",
+      "summary": "感谢支持，继续努力",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "北京",
+      "date": "2025-11-25",
+      "url": "https://mp.weixin.qq.com/s/-gQaKw39C-15Q-GT73_6rg",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "阿里千问成新加坡国家AI项目技术底座",
+      "summary": "新模型登顶东南亚榜单",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-11-27",
+      "url": "https://mp.weixin.qq.com/s/wVpMDONbXQKWgDh1nF_WrA",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "官宣！阿里云成为大广赛独家AI战略合作伙伴",
+      "summary": "首次引入视觉生成大模型进行全程创作支持",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-12-09",
+      "url": "https://mp.weixin.qq.com/s/sD6khQ_MIko75fKDfcLrTw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "AgentRun上线！5分钟完成企业级Agent构建",
+      "summary": "一站式Agentic AI基础设施平台",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-12-10",
+      "url": "https://mp.weixin.qq.com/s/3noo6wAU1sfws2yJEVF47w",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Gartner®全球云数据库管理系统报告：阿里云连续6年获评“领导者”",
+      "summary": "亚太唯一",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "未知/全国/线上",
+      "date": "2025-12-15",
+      "url": "https://mp.weixin.qq.com/s/dIbnrOODCpBXGzH_DMyyXw",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "阿里云携手超90%金融机构，交出2025年度答卷",
+      "summary": "市场覆盖创新高",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "2025-12-19",
+      "url": "https://mp.weixin.qq.com/s/QANRuU1gMpe-Ui2YYKdzCw",
+      "reads": 0,
+      "likes": 0
+    }
+  ]
+}

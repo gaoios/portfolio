@@ -1,0 +1,848 @@
+{
+  "meta": {
+    "id": "industry_calendar",
+    "name": "AI大厂与全景日历",
+    "icon": "🗓️",
+    "color": "#0D9488",
+    "colorSecondary": "#14B8A6"
+  },
+  "categories": [
+    {
+      "id": "🔺 Tier 1: 战略级旗舰峰会",
+      "name": "🔺 Tier 1: 战略级旗舰峰会",
+      "icon": "🔺"
+    },
+    {
+      "id": "🎯 Tier 2: 战役级核心活动与发布",
+      "name": "🎯 Tier 2: 战役级核心活动与发布",
+      "icon": "🎯"
+    },
+    {
+      "id": "🚀 Tier 3: 战术级生态与常态化运营",
+      "name": "🚀 Tier 3: 战术级生态与常态化运营",
+      "icon": "🚀"
+    }
+  ],
+  "items": [
+    {
+      "title": "Disrupt 2026",
+      "summary": "[TechCrunch] - MKT As Service - 科技媒体峰会 | 2026年10月13-15日 (Disrupt，旧金山)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "旧金山",
+      "date": "2026-10-13",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Code Conference 2026",
+      "summary": "[The Verge] - MKT As Service - 媒体峰会 | 2026年9月 (Code Conference，待定)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "待定",
+      "date": "2026-09-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "CES 2026深度报道",
+      "summary": "[Ars Technica] - MKT As Service - 展会测评 | 2026年1月7-10日 (CES报道，拉斯维加斯)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "拉斯维加斯",
+      "date": "2026-01-07",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "GTC 2026深度报道",
+      "summary": "[Ars Technica] - MKT As Service - 峰会测评 | 2026年3月16-19日 (GTC报道，圣何塞)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "圣何塞",
+      "date": "2026-03-16",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "NAB Show 2026",
+      "summary": "[RNDR/Render] - 区块链基建 - 广播电视展 | 2026年4月18-22日 (NAB Show，拉斯维加斯)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "拉斯维加斯",
+      "date": "2026-04-18",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Solana Breakpoint 2026",
+      "summary": "[RNDR/Render] - 区块链基建 - 区块链峰会 | 2026年11月15-17日 (Breakpoint，伦敦)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "伦敦",
+      "date": "2026-11-15",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Token2049新加坡",
+      "summary": "[TAO/Bittensor] - 区块链基建 - 加密/AI峰会 | 2026年10月7-8日 (Token2049，新加坡)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "新加坡",
+      "date": "2026-10-07",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Token2049迪拜",
+      "summary": "[TAO/Bittensor] - 区块链基建 - 加密/AI峰会 | 2026年4月 (Token2049，迪拜)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "迪拜",
+      "date": "2026-04-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "ASI第一至四季度升级",
+      "summary": "[FET/Fetch.ai] - 区块链基建 - 主网路线图升级 | 2026年每季度末 (ASI主网升级，线上)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "线上",
+      "date": "2026-03-31",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "GTC 2026",
+      "summary": "[NVIDIA] - 顶层算力与生态 - GPU技术大会 | 2026年3月16-19日 (GTC，圣何塞)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "圣何塞",
+      "date": "2026-03-16",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Computex 2026",
+      "summary": "[NVIDIA] - 顶层算力与生态 - 电脑展 | 2026年6月2-5日 (Computex，台北)",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "台北",
+      "date": "2026-06-02",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "SIGGRAPH 2026",
+      "summary": "[NVIDIA] - 顶层算力与生态 - 图形学大会 | 2026年7月19-23日 (SIGGRAPH，洛杉矶)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "洛杉矶",
+      "date": "2026-07-19",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Advancing AI 2026",
+      "summary": "[AMD] - 顶层算力与生态 - AI发布会 | 2026年7月22-23日 (Advancing AI，旧金山)",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "旧金山",
+      "date": "2026-07-22",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Meta Connect 2026",
+      "summary": "[Meta] - 顶层软件/云厂商 - 开发者大会 | 2026年9月17日 (Meta Connect，硅谷)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "硅谷/线上",
+      "date": "2026-09-17",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Dreamforce 2026",
+      "summary": "[Salesforce] - 顶层软件/云厂商 - 用户大会 | 2026年9月15-17日 (Dreamforce，旧金山)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "旧金山",
+      "date": "2026-09-15",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "TrailblazerDX 2026",
+      "summary": "[Salesforce] - 顶层软件/云厂商 - 开发者大会 | 2026年3月 (TrailblazerDX，待定)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "待定",
+      "date": "2026-03-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "华为全联接大会2026",
+      "summary": "[华为云/昇腾] - 国产算力先锋 - 旗舰峰会 | 2026年9月18-20日 (全联接大会)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "上海/深圳",
+      "date": "2026-09-18",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "华为开发者大会2026",
+      "summary": "[华为云/昇腾] - 国产算力先锋 - 开发者大会 | 2026年6-7月 (华为开发者大会，东莞)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "东莞",
+      "date": "2026-06-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "云栖大会2026",
+      "summary": "[阿里云] - 国内云平台 - 开发者大会 | 2026年9月1日 (云栖大会，杭州)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "杭州",
+      "date": "2026-09-01",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "全球数字生态大会2026",
+      "summary": "[腾讯云] - 国内云平台 - 行业峰会 | 2026年9月16-17日 (数字生态大会，深圳)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "深圳",
+      "date": "2026-09-16",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "FORCE原动力大会春冬",
+      "summary": "[火山引擎] - 国内云平台 - 产品发布会 | 2026年4月/12月 (FORCE双节点，待定)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "待定",
+      "date": "2026-04-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "WAIC 2026",
+      "summary": "[壁仞科技] - 国产算力先锋 - AI会展 | 2026年7月3-6日 (WAIC，上海)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "上海",
+      "date": "2026-07-03",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "年度业绩与WAIC",
+      "summary": "[寒武纪] - 国产算力先锋 - 财报/展会 | 2026年4/7月 (业绩会/WAIC)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "线上/上海",
+      "date": "2026-04-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "OpenAI DevDay 2026",
+      "summary": "[OpenAI] - 标杆大模型 - 开发者大会 | 2026年秋季 (DevDay，旧金山)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "旧金山",
+      "date": "2026-10-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Google I/O 2026",
+      "summary": "[Google] - 标杆大模型 - 开发者大会 | 2026年5月 (Google I/O，山景城)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "山景城",
+      "date": "2026-05-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Claude核心迭代发布",
+      "summary": "[Anthropic] - 标杆大模型 - 模型发布 | 2026年待定 (Claude升级节点)",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "线上",
+      "date": "2026-03-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Grok大版本更新",
+      "summary": "[xAI] - 标杆大模型 - 模型发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Mistral Next活动",
+      "summary": "[Mistral] - 标杆大模型 - 开发者活动",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "企业级服务峰会",
+      "summary": "[Cohere] - 标杆大模型 - 行业峰会",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "V系列新源码与API降价",
+      "summary": "[DeepSeek] - 中国大模型先驱 - 模型发布/降价",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "长文本引擎升级",
+      "summary": "[Kimi (月之暗面)] - 中国大模型先驱 - 模型发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "海螺多模态引擎迭代",
+      "summary": "[MiniMax] - 中国大模型先驱 - 模型发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "开发者交流会",
+      "summary": "[StepFun (阶跃星辰)] - 中国大模型先驱 - 开发者活动",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Ignite / Build 2026",
+      "summary": "[Microsoft] - 数据与云平台巨头 - 技术峰会 | 2026年5/11月 (Build/Ignite)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "西雅图/待定",
+      "date": "2026-05-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "re:Invent 2026",
+      "summary": "[AWS (Amazon Bedrock)] - 数据与云平台巨头 - 云峰会 | 2026年12月1-5日 (re:Invent，拉斯维加斯)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "拉斯维加斯",
+      "date": "2026-12-01",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Data + AI Summit 2026",
+      "summary": "[Databricks] - 数据与云平台巨头 - 数据峰会 | 2026年6月 (Data+AI Summit，旧金山)",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "旧金山",
+      "date": "2026-06-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Data Cloud Summit 2026",
+      "summary": "[Snowflake] - 数据与云平台巨头 - 数据峰会 | 2026年6月 (Data Cloud Summit，待定)",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "待定",
+      "date": "2026-06-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Birthday Week",
+      "summary": "[Cloudflare] - 数据与云平台巨头 - 发布周 | 2026年9月 (Birthday Week，线上)",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "线上",
+      "date": "2026-09-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "小米开发者大会(MIDC)",
+      "summary": "[Xiaomi] - 数据与云平台巨头 - 生态峰会 | 2026年10月 (MIDC，北京)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "北京",
+      "date": "2026-10-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "欧洲开源本地化部署",
+      "summary": "[Scaleway] - 数据与云平台巨头 - 沙龙发布",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "GroqDay / 芯片升级",
+      "summary": "[Groq] - 推理加速极速引擎 - 产品发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "社区生态开源会",
+      "summary": "[Together.ai] - 推理加速极速引擎 - 生态活动",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "大模型API托管上新",
+      "summary": "[DeepInfra] - 推理加速极速引擎 - 服务发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "引擎延迟体验更新",
+      "summary": "[Fireworks] - 推理加速极速引擎 - 服务发布",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "社区顶流模型库扩容",
+      "summary": "[Replicate] - 推理加速极速引擎 - 生态事件",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "无服务器更新",
+      "summary": "[Baseten] - 推理加速极速引擎 - 平台发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Web3xAI 算力招募",
+      "summary": "[Hyperbolic] - 推理加速极速引擎 - 算力峰会",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "云原生AI开发者季",
+      "summary": "[SiliconFlow(硅基流动)] - 推理加速极速引擎 - 产品发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "新型GPU智算集群投片",
+      "summary": "[Nebius] - 推理加速极速引擎 - 基础设施发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "图像/视频API极速化",
+      "summary": "[Novita] - 推理加速极速引擎 - 服务发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "SC26超级计算展",
+      "summary": "[Cerebras] - 异构硬核算力 - 超算展会 | 2026年11月15-20日 (SC26，亚特兰大)",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "亚特兰大",
+      "date": "2026-11-15",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Hot Chips 2026",
+      "summary": "[Cerebras] - 异构硬核算力 - 芯片峰会 | 2026年8月 (Hot Chips，硅谷)",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "硅谷",
+      "date": "2026-08-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "SN系列系统发版",
+      "summary": "[SambaNova] - 异构硬核算力 - 硬件发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Fully Connected 2026",
+      "summary": "[Weights & Biases] - 企业基建与专精库 - MLOps峰会 | 2026年4月 (Fully Connected，旧金山)",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "旧金山",
+      "date": "2026-04-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "工具生态链路迭代",
+      "summary": "[Lightning AI] - 企业基建与专精库 - 开发升级",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "引擎生成效率报告",
+      "summary": "[FriendliAI] - 企业基建与专精库 - 白皮书发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "Solar多语言开源库",
+      "summary": "[Upstage] - 企业基建与专精库 - 模型发布",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "印度语种开源行动",
+      "summary": "[Sarvam] - 企业基建与专精库 - 生态事件",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "机器视觉大版本",
+      "summary": "[Clarifai] - 企业基建与专精库 - 平台发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "长文本与RAG专项更新",
+      "summary": "[AI21 Labs] - 企业基建与专精库 - 模型发布",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "新一代多模态理解框架",
+      "summary": "[Reka AI] - 企业基建与专精库 - 模型发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "极速视频处理端到端",
+      "summary": "[Inception] - 企业基建与专精库 - 服务发布",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "节点加密网络拓展",
+      "summary": "[Parasail] - 企业基建与专精库 - 生态扩建",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "专用企业端构建节点",
+      "summary": "[CompactifAI] - 企业基建与专精库 - -",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "公共AI算力网络动向",
+      "summary": "[Public AI] - 企业基建与专精库 - -",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "字节生态外溢化服务",
+      "summary": "[StreamLake] - 企业基建与专精库 - -",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "基建聚合拓展",
+      "summary": "[GMI] - 企业基建与专精库 - -",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "小参效能组件上新",
+      "summary": "[Eigen AI] - 企业基建与专精库 - -",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "模型插件体系扩容",
+      "summary": "[LongCat] - 企业基建与专精库 - -",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "解析TCO部署真实成本",
+      "summary": "[Alex Kushchevsky] - 意见领袖/实战派 - 全网发声/社媒",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "解构各厂大端架构与热密度",
+      "summary": "[硅谷工程师群体] - 极客意见群 - 黑客发声/Reddit",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "考量迁移时间与ROI模型",
+      "summary": "[创业CTO群体] - 企业买单方 - 投产发声/LinkedIn",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "CUDA生态撤出成本与刚需",
+      "summary": "[ISV合作伙伴] - 开发商/ISV - 中国实景/知乎",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "AI Ascent 2026",
+      "summary": "[红杉资本 (Sequoia)] - 投资资本与风投 - 投资研讨峰会 | 2026年3-4月 (AI Ascent，旧金山)",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "旧金山",
+      "date": "2026-03-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "解构NVDA产能溢出利好红利",
+      "summary": "[加密/Web3投资者] - 投资资本与风投 - 投资观点/X",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "更新合规地缘政治折现率模型",
+      "summary": "[顶层投资分析师] - 投资资本与风投 - 券商研报",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "MLPerf推理/训练基准发榜",
+      "summary": "[MLCommons] - 基准校验榜单 - 性能测试 | 2026年4/9月 (MLPerf放榜，线上)",
+      "category": "🎯 Tier 2: 战役级核心活动与发布",
+      "city": "线上",
+      "date": "2026-04-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "多芯抹平部署套件框架首发",
+      "summary": "[OpenClaw] - 开源底层库 - 开源项目",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "追截NVDA关键支持度进度发布",
+      "summary": "[ROCm生态] - 开源底层库 - 社区更新",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "异构迁移实践库更新潮",
+      "summary": "[CANN (华为昇腾)] - 开源底层库 - 技术更新",
+      "category": "🚀 Tier 3: 战术级生态与常态化运营",
+      "city": "未知/全国/线上",
+      "date": "",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "NeurIPS 2026",
+      "summary": "[NeurIPS] - 顶级学术源 - 学术顶会 | 2026年12月2-8日 (NeurIPS，圣地亚哥)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "圣地亚哥",
+      "date": "2026-12-02",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    },
+    {
+      "title": "ICML 2026",
+      "summary": "[ICML] - 顶级学术源 - 学术顶会 | 2026年7月 (ICML，待定)",
+      "category": "🔺 Tier 1: 战略级旗舰峰会",
+      "city": "待定",
+      "date": "2026-07-XX",
+      "url": "",
+      "reads": 0,
+      "likes": 0
+    }
+  ]
+}
